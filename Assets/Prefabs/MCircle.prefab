@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: 33e4201cdefa01841a79383382ae4adb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,11 +132,12 @@ MonoBehaviour:
   currentStamina: 0
   currentMana: 0
   currentShieldUp: 0
-  maxHP: 100
-  maxSTA: 100
-  maxMP: 100
+  maxHP: 0
+  maxSTA: 0
+  maxMP: 0
   shieldUpMax: 5
   isShieldRecharging: 0
+  dead: 0
 --- !u!50 &2229649527213750922
 Rigidbody2D:
   serializedVersion: 4

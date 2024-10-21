@@ -17,12 +17,12 @@ public class EnemyObject : MonoBehaviour
     [SerializeField] private Behaviour behaviour;
     [SerializeField] private float chaseToDistance;
     [SerializeField] private float speed;
+    [SerializeField] private int scoreValue;
     private float currentDistance;
     private Vector2 playerDirection;
     public float distanceToOtherEnemy;
 
     private float currentSpeed;
-    private Vector3 otherPos;
     public bool tooClose = false;
 
     private void Start()
@@ -42,6 +42,8 @@ public class EnemyObject : MonoBehaviour
         if (enemy.dead)
         {
             SpawnManager.SubtractFromCount();
+            LevelManager.IncreaseScore(scoreValue);
+
             Destroy(gameObject);
 
         }    

@@ -11,10 +11,10 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float currentStamina;
     [SerializeField] private int currentMana;
     [SerializeField] private float currentShieldUp;
-    [SerializeField] private int maxHP = 100;
-    [SerializeField] private float maxSTA = 100f;
-    [SerializeField] private int maxMP = 100;
-    [SerializeField] private float shieldUpMax = 5f;
+    [SerializeField] private int maxHP;
+    [SerializeField] private float maxSTA;
+    [SerializeField] private int maxMP;
+    [SerializeField] private float shieldUpMax;
     public bool isShieldRecharging;
     public bool dead = false;
     PlayerManager pManager;
@@ -80,20 +80,21 @@ public class PlayerStats : MonoBehaviour
             return currentShieldUp;
         }
         else return 0;
+
     }
 
     private void Awake()
     {
         playerCharacterController = GetComponent<PlayerCharacterController>();
-        pManager = FindFirstObjectByType<PlayerManager>();
+        pManager = PlayerManager.Instance;
         equipmentController = GetComponentInChildren<EquipmentController>();
-        maxHP = pManager.MHP;  currentHealth = pManager.HP; currentStamina = pManager.MSTA; currentMana = pManager.MMP; currentShieldUp = pManager.MSU;
+        maxHP = pManager.MHP; maxSTA = pManager.MSTA; maxMP = pManager.MMP; shieldUpMax = pManager.MSU;  currentHealth = pManager.HP; currentStamina = pManager.MSTA; currentMana = pManager.MMP; currentShieldUp = pManager.MSU;
     }
     private void FixedUpdate()
     {
         StaminaRecovery();
         ShieldRecovery();
-        if (currentHealth > 0)
+        if (currentHealth <= 0)
         {
             dead = true;
         }

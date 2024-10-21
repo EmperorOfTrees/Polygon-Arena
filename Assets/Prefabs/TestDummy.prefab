@@ -47,6 +47,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3487906264572029302}
+  behaviour: 0
+  chaseToDistance: 0
+  speed: 0
+  scoreValue: 0
+  distanceToOtherEnemy: 0
+  tooClose: 0
 --- !u!1001 &1410347922815138415
 PrefabInstance:
   m_ObjectHideFlags: 0

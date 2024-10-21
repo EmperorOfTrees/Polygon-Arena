@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8689537235548892597, guid: 7fc91bd40d80ca3439ff9567ad9dd933, type: 3}
       propertyPath: m_Name
-      value: PlayerUI
+      value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 8847517634923244704, guid: 7fc91bd40d80ca3439ff9567ad9dd933, type: 3}
       propertyPath: m_AnchorMax.x

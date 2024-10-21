@@ -23,6 +23,7 @@ public class GameManager : PersistentSingleton<GameManager>
     public static void StartGame()
     {
         Instance.score = 0;
+        Time.timeScale = 1;
         GameLoadSceneGroup(1);
     }
 
@@ -46,6 +47,7 @@ public class GameManager : PersistentSingleton<GameManager>
     public static void ReturnToMenu()
     {
         Instance.CurrentState = Game_State.MainMenu;
+        GameLoadSceneGroup(0);
     }
 
     public static void ExitGame()

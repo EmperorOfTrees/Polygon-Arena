@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : Singleton<PlayerManager>
 {
     [SerializeField] private int playerCurrentHealth;
     [SerializeField] private int playerCurrentMaxHealth;
@@ -44,12 +44,6 @@ public class PlayerManager : MonoBehaviour
         playerCurrentHealth = playerCurrentMaxHealth;
 
     }
-
-    void Update()
-    {
-        
-    }
-
 
     public void GrabStats(PlayerStats playerStats)
     {

@@ -13,7 +13,11 @@ public class SpawnManager : StaticInstance<SpawnManager>
     [SerializeField] private int maxEnemies;
     [SerializeField] private float timer;
     [SerializeField] private float spawnInterval;
+    [SerializeField] private float initialSpawnInterval;
+    [SerializeField] private int initialSpawnCount;
+    private int initialSpawnProg;
     private bool spawnPossible;
+    private bool initialSpawned;
     public float difficulty;
     private int maxDifficulty; //TODO: implement, low priority
     private int nextSpawnPointIndex;
@@ -39,12 +43,30 @@ public class SpawnManager : StaticInstance<SpawnManager>
             spawnPossible = false;
         }
         else spawnPossible = true;
-        if (timer >= spawnInterval)
+        if (initialSpawned)
         {
-            SelectSpawnPoint();
-            SelectNextEnemy();
-            SpawnEnemy(nextSpawnPoint, nextEnemy);
-        } 
+            if (timer >= spawnInterval)
+            {
+                SelectSpawnPoint();
+                SelectNextEnemy();
+                SpawnEnemy(nextSpawnPoint, nextEnemy);
+            }
+        }
+        else if(!initialSpawned)
+        {
+            if(timer >= initialSpawnInterval)
+            {
+                SelectSpawnPoint();
+                SelectNextEnemy();
+                SpawnEnemy(nextSpawnPoint, nextEnemy);
+                initialSpawnProg++;
+                if (initialSpawnProg >= initialSpawnCount)
+                {
+                    initialSpawned = true;
+                }
+            }
+        }
+        
     }
 
     private void SelectNextEnemy()

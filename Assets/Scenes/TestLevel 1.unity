@@ -801,6 +801,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2225935080669675814, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
+      propertyPath: maxHP
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225935080669675814, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
+      propertyPath: maxMP
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225935080669675814, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
+      propertyPath: maxSTA
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8290702540258717299, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
       propertyPath: m_Name
       value: MCircle
