@@ -18,9 +18,11 @@ public class EnemyObject : MonoBehaviour
     [SerializeField] private float chaseToDistance;
     [SerializeField] private float speed;
     [SerializeField] private int scoreValue;
+    [SerializeField] private AudioClip deathSound;
     private float currentDistance;
     private Vector2 playerDirection;
     public float distanceToOtherEnemy;
+    private bool scored;
 
     private float currentSpeed;
     public bool tooClose = false;
@@ -41,10 +43,15 @@ public class EnemyObject : MonoBehaviour
         ChosenAI(behaviour);
         if (enemy.dead)
         {
-            SpawnManager.SubtractFromCount();
-            LevelManager.IncreaseScore(scoreValue);
-
-            Destroy(gameObject);
+            if (!scored)
+            {
+                SpawnManager.SubtractFromCount();
+                LevelManager.IncreaseScore(scoreValue);
+                scored = true;
+                SFXManager.Instance.PlaySoundFXClip(deathSound,gameObject.transform,1f);
+            }
+            enemy.fadeLevel -= 2*Time.deltaTime;
+            Destroy(gameObject, 0.5f);
 
         }    
     }

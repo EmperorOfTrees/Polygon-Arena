@@ -6,19 +6,25 @@ using UnityEngine;
 public class BaseEnemy : MonoBehaviour
 {
     [SerializeField] private int maxHitPoints;
+    [SerializeField] private AudioClip damageSound; //make this a list
     private int hitPoints;
     private bool tookDamage;
     private float timer;
     public bool dead;
+    public Material material;
+    public float fadeLevel = 1f;
+
 
     protected void Start()
     {
         hitPoints = maxHitPoints;
+        material = GetComponent<SpriteRenderer>().material;
     }
 
 
     protected void Update()
     {
+        material.SetFloat("_Fade", fadeLevel);
         if (hitPoints <= 0)
         {
             dead = true;
@@ -38,7 +44,7 @@ public class BaseEnemy : MonoBehaviour
             hitPoints -= damage;
             tookDamage = true;
             timer = 1;
-
+            SFXManager.Instance.PlaySoundFXClip(damageSound, gameObject.transform, 1f);
         }
     }
 

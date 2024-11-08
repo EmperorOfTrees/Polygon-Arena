@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: bba63d2ddb5fae340a7c1401f0fa1bfd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,7 +129,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1377778, y: 0.9988889}
+    oldSize: {x: 1, y: 0.8779297}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -137,9 +137,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.0038333833, y: 0.49685532}
-      - {x: -0.58050346, y: -0.4975922}
-      - {x: 0.5728362, y: -0.49375886}
+    - - {x: 0.000047575682, y: 0.4351085}
+      - {x: -0.49971566, y: -0.4310332}
+      - {x: 0.49846336, y: -0.4305097}
   m_UseDelaunayMesh: 0
 --- !u!114 &1594703637873803682
 MonoBehaviour:
@@ -154,7 +154,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 50
+  damageSound: {fileID: 8300000, guid: 7bd4cbb137da0c4469b4d3caae123b32, type: 3}
   dead: 0
+  material: {fileID: 0}
+  fadeLevel: 1
   rotationSpeed: 90
 --- !u!1001 &4691575059095431703
 PrefabInstance:
@@ -186,11 +189,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296360243845435722, guid: 8c48b660127a86b4daaaa9ccb07f291d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.639
+      value: 0.6029
       objectReference: {fileID: 0}
     - target: {fileID: 6296360243845435722, guid: 8c48b660127a86b4daaaa9ccb07f291d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.531
+      value: -0.4894
       objectReference: {fileID: 0}
     - target: {fileID: 6296360243845435722, guid: 8c48b660127a86b4daaaa9ccb07f291d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -268,11 +271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296360243845435722, guid: 8c48b660127a86b4daaaa9ccb07f291d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.003
+      value: 0.0003
       objectReference: {fileID: 0}
     - target: {fileID: 6296360243845435722, guid: 8c48b660127a86b4daaaa9ccb07f291d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.649
+      value: 0.5598
       objectReference: {fileID: 0}
     - target: {fileID: 6296360243845435722, guid: 8c48b660127a86b4daaaa9ccb07f291d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -350,11 +353,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296360243845435722, guid: 8c48b660127a86b4daaaa9ccb07f291d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.712
+      value: -0.5922
       objectReference: {fileID: 0}
     - target: {fileID: 6296360243845435722, guid: 8c48b660127a86b4daaaa9ccb07f291d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.57
+      value: -0.4831
       objectReference: {fileID: 0}
     - target: {fileID: 6296360243845435722, guid: 8c48b660127a86b4daaaa9ccb07f291d, type: 3}
       propertyPath: m_LocalPosition.z

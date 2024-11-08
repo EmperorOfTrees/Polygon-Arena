@@ -6,6 +6,7 @@ public class BasicEnemyAttack : MonoBehaviour
 {
     [SerializeField] private GameObject shot;
     [SerializeField] private GameObject Pewer;
+    private PolygonEnemy parent;
     private float timer;
     [SerializeField] private bool canFire;
     [SerializeField] private bool seesPlayer;
@@ -17,28 +18,33 @@ public class BasicEnemyAttack : MonoBehaviour
 
     void Start()
     {
+        parent = GetComponentInParent<PolygonEnemy>();
         canFire = true;
     }
 
     void Update()
     {
-        if (!canFire)
+        if (!parent.dead)
         {
-            timer += Time.deltaTime;
-            if (timer > timeBetweenShots)
+            if (!canFire)
             {
-                canFire = true;
-                timer = 0;
+                timer += Time.deltaTime;
+                if (timer > timeBetweenShots)
+                {
+                    canFire = true;
+                    timer = 0;
+                }
+            }
+            if (canFire)
+            {
+                if (seesPlayer)
+                {
+                    canFire = false;
+                    Instantiate(shot, shotTran.position, Pewer.transform.rotation);
+                }
             }
         }
-        if (canFire)
-        {
-            if (seesPlayer)
-            {
-                canFire = false;
-                Instantiate(shot, shotTran.position, Pewer.transform.rotation);
-            }
-        }
+        
     }
     private void FixedUpdate()
     {

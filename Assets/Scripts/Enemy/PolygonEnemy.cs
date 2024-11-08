@@ -15,6 +15,10 @@ public class PolygonEnemy : BaseEnemy
     new void Update()
     {
         base.Update();
-        transform.Rotate(0,0,rotationSpeed*Time.deltaTime);
+        if (!dead)
+        {
+            transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+        }
+        
     }
 }

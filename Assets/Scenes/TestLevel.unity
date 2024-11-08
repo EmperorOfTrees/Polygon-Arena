@@ -989,7 +989,7 @@ PrefabInstance:
       objectReference: {fileID: 1815182538}
     - target: {fileID: 2796144445550555962, guid: 0670c8476b70d7442abc88c6c5fad9b0, type: 3}
       propertyPath: availableEnemies.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2796144445550555962, guid: 0670c8476b70d7442abc88c6c5fad9b0, type: 3}
       propertyPath: 'availableEnemies.Array.data[0]'
@@ -999,9 +999,33 @@ PrefabInstance:
       propertyPath: 'availableEnemies.Array.data[1]'
       value: 
       objectReference: {fileID: 8841561004602296293, guid: a886b82365bf2f944a823a7db606e06f, type: 3}
+    - target: {fileID: 2796144445550555962, guid: 0670c8476b70d7442abc88c6c5fad9b0, type: 3}
+      propertyPath: 'availableEnemies.Array.data[2]'
+      value: 
+      objectReference: {fileID: 6812016332771390276, guid: 1bb73ffc4702eec40aabdca56ee5e318, type: 3}
+    - target: {fileID: 2796144445550555962, guid: 0670c8476b70d7442abc88c6c5fad9b0, type: 3}
+      propertyPath: 'availableEnemies.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1314073073209644123, guid: b4b93d19883ed004db69401e96065e43, type: 3}
+    - target: {fileID: 2796144445550555962, guid: 0670c8476b70d7442abc88c6c5fad9b0, type: 3}
+      propertyPath: 'availableEnemies.Array.data[4]'
+      value: 
+      objectReference: {fileID: 3121630758474441601, guid: b04784054e8d12d41819bfcd1b70f640, type: 3}
+    - target: {fileID: 2796144445550555962, guid: 0670c8476b70d7442abc88c6c5fad9b0, type: 3}
+      propertyPath: 'availableEnemies.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1899931087765581756, guid: 9689b30af2d592f468f268f262843c1e, type: 3}
+    - target: {fileID: 2796144445550555962, guid: 0670c8476b70d7442abc88c6c5fad9b0, type: 3}
+      propertyPath: 'availableEnemies.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8841561004602296293, guid: a886b82365bf2f944a823a7db606e06f, type: 3}
     - target: {fileID: 3659756054860737471, guid: 0670c8476b70d7442abc88c6c5fad9b0, type: 3}
       propertyPath: m_Name
       value: SpawnManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659756054860737471, guid: 0670c8476b70d7442abc88c6c5fad9b0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
