@@ -534,82 +534,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[0].GroupName
-      value: MainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[1].GroupName
-      value: TestScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[0].Scenes.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[1].Scenes.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[0].Scenes.Array.data[0].SceneType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[0].Scenes.Array.data[1].SceneType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[0].Scenes.Array.data[2].SceneType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[1].Scenes.Array.data[1].SceneType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[0].Scenes.Array.data[0].SceneReference.guid
-      value: 4df1a862078f0ec45951d0284043fc0f
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[0].Scenes.Array.data[1].SceneReference.guid
-      value: 18a1fe0c6b1102a4a8039166f5b10dad
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[0].Scenes.Array.data[2].SceneReference.guid
-      value: 18a1fe0c6b1102a4a8039166f5b10dad
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[1].Scenes.Array.data[0].SceneReference.guid
-      value: 8c9cfa26abfee488c85f1582747f6a02
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[1].Scenes.Array.data[1].SceneReference.guid
-      value: 18a1fe0c6b1102a4a8039166f5b10dad
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[0].Scenes.Array.data[0].SceneReference.asset
-      value: 
-      objectReference: {fileID: 102900000, guid: 4df1a862078f0ec45951d0284043fc0f, type: 3}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[0].Scenes.Array.data[1].SceneReference.asset
-      value: 
-      objectReference: {fileID: 102900000, guid: 18a1fe0c6b1102a4a8039166f5b10dad, type: 3}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[0].Scenes.Array.data[2].SceneReference.asset
-      value: 
-      objectReference: {fileID: 102900000, guid: 18a1fe0c6b1102a4a8039166f5b10dad, type: 3}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[1].Scenes.Array.data[0].SceneReference.asset
-      value: 
-      objectReference: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
-    - target: {fileID: 2614472089932908088, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: sceneGroups.Array.data[1].Scenes.Array.data[1].SceneReference.asset
-      value: 
-      objectReference: {fileID: 102900000, guid: 18a1fe0c6b1102a4a8039166f5b10dad, type: 3}
     - target: {fileID: 3278228566578433297, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -649,10 +573,6 @@ PrefabInstance:
     - target: {fileID: 3278228566578433297, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7503647643421733478, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
-      propertyPath: m_Type
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8204659267645676136, guid: 2576cfaf8e262d6488815d8e8ec9aeec, type: 3}
       propertyPath: m_Name
@@ -902,11 +822,11 @@ PrefabInstance:
     - target: {fileID: 492461543167405459, guid: 659abe39f3047e8409ce7d189cc93cf3, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: a3b39a7957a0b7c4aa5c3b4d6ad2620f, type: 3}
     - target: {fileID: 492461543167405459, guid: 659abe39f3047e8409ce7d189cc93cf3, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: a3b39a7957a0b7c4aa5c3b4d6ad2620f, type: 3}
     - target: {fileID: 817040490858704303, guid: 659abe39f3047e8409ce7d189cc93cf3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
