@@ -155,6 +155,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHitPoints: 50
   damageSound: {fileID: 8300000, guid: 7bd4cbb137da0c4469b4d3caae123b32, type: 3}
+  swordSounds:
+  - {fileID: 8300000, guid: c39b98477a66b5f4cb5b129ca5d1b17c, type: 3}
+  - {fileID: 8300000, guid: fa0e443e06af44645a5dc301ee0508a8, type: 3}
+  - {fileID: 8300000, guid: b5781c0134df2d8468ada356d45c5684, type: 3}
+  - {fileID: 8300000, guid: 2bd77ca9ea657a34a8a039ed953b25ed, type: 3}
+  - {fileID: 8300000, guid: ff3ed21d7a6968b42852aa48166c856d, type: 3}
   dead: 0
   material: {fileID: 0}
   fadeLevel: 1

@@ -7,6 +7,7 @@ public class BaseEnemy : MonoBehaviour
 {
     [SerializeField] private int maxHitPoints;
     [SerializeField] private AudioClip damageSound; //make this a list
+    [SerializeField] private AudioClip[] swordSounds;
     private int hitPoints;
     private bool tookDamage;
     private float timer;
@@ -73,6 +74,7 @@ public class BaseEnemy : MonoBehaviour
                 TakeDamage((int)collision.GetComponent<Sword>().GetSpeed() * collision.GetComponent<Sword>().GetBladeDamage());
                 print("hit with the blade!");
             }
+            SFXManager.Instance.PlayRandomSoundFXClip(swordSounds, collision.gameObject.transform, 1f);
         }
     }
 }

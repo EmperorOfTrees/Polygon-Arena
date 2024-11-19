@@ -53,6 +53,7 @@ MonoBehaviour:
   chaseToDistance: 6
   speed: 3
   scoreValue: 20
+  deathSound: {fileID: 0}
   distanceToOtherEnemy: 0
   tooClose: 0
 --- !u!58 &731728809988760179
@@ -207,10 +208,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyUI
       objectReference: {fileID: 0}
-    - target: {fileID: 3186171342931385990, guid: 114404277deea5b48bedfa5926bd8cd3, type: 3}
-      propertyPath: me
-      value: 
-      objectReference: {fileID: 2756877141770286798}
     - target: {fileID: 3600092310672160889, guid: 114404277deea5b48bedfa5926bd8cd3, type: 3}
       propertyPath: m_Pivot.x
       value: 0

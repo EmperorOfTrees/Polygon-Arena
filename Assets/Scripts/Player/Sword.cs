@@ -46,4 +46,15 @@ public class Sword : PlayerEquipment
     {
         return tipDamage;
     }
+    //TODO: might not be the best way to do this with upgrades, maybe a switch case instead
+
+    public void SetTipDamage(int dmg)
+    {
+        tipDamage = dmg;
+    }
+
+    public void SetBladeDamage(int dmg)
+    {
+        bladeDamage = dmg;
+    }
 }
