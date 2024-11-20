@@ -26,6 +26,8 @@ public class PlayerCharacterController : MonoBehaviour
 
     private Vector2 motionVector;
 
+    [SerializeField] private AudioClip[] dashSounds;
+
     private void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
@@ -126,12 +128,11 @@ public class PlayerCharacterController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !isDashing && !dashTimeOUT) 
         {
-
             isDashing = true;
             dashTimeOUT = true;
             dashTimer = 0.20f;
             dashTimeOutTimer = 5f;
-
+            SFXManager.Instance.PlayRandomSoundFXClip(dashSounds, transform, 1f);
         }
     }
 }

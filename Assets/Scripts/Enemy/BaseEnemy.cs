@@ -6,7 +6,6 @@ using UnityEngine;
 public class BaseEnemy : MonoBehaviour
 {
     [SerializeField] private int maxHitPoints;
-    [SerializeField] private AudioClip damageSound; //make this a list
     [SerializeField] private AudioClip[] swordSounds;
     private int hitPoints;
     private bool tookDamage;
@@ -45,7 +44,6 @@ public class BaseEnemy : MonoBehaviour
             hitPoints -= damage;
             tookDamage = true;
             timer = 1;
-            SFXManager.Instance.PlaySoundFXClip(damageSound, gameObject.transform, 1f);
         }
     }
 
@@ -74,7 +72,7 @@ public class BaseEnemy : MonoBehaviour
                 TakeDamage((int)collision.GetComponent<Sword>().GetSpeed() * collision.GetComponent<Sword>().GetBladeDamage());
                 print("hit with the blade!");
             }
-            SFXManager.Instance.PlayRandomSoundFXClip(swordSounds, collision.gameObject.transform, 1f);
+            SFXManager.Instance.PlayRandomSoundFXClip(swordSounds, collision.gameObject.transform, 0.25f);
         }
     }
 }

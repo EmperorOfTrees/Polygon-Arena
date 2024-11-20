@@ -19,6 +19,8 @@ public class PlayerStats : MonoBehaviour
     public bool dead = false;
     PlayerManager pManager;
 
+    [SerializeField] private AudioClip[] deathSounds;
+
     public int HP
     {
         get => currentHealth;
@@ -97,6 +99,7 @@ public class PlayerStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             dead = true;
+            SFXManager.Instance.PlayRandomSoundFXClip(deathSounds, transform, 1f);
         }
     }
     public void AdjustHealth(int change)

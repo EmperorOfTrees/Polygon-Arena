@@ -138,6 +138,14 @@ MonoBehaviour:
   damage: 10
   Aim: {fileID: 6499207358083086044}
   timeToLive: 2
+  hitSounds:
+  - {fileID: 8300000, guid: dfe7e20d8069cb141ae1684d032640d2, type: 3}
+  - {fileID: 8300000, guid: ea43960cf34c61d4aa9fba252d87eb0e, type: 3}
+  - {fileID: 8300000, guid: af0c333b74e2c484da524dc670865f6a, type: 3}
+  deflectSounds:
+  - {fileID: 8300000, guid: bbea0e44b45342448abc046f891ad2f0, type: 3}
+  - {fileID: 8300000, guid: 36cba5ca8c640134c98f178c248076a6, type: 3}
+  - {fileID: 8300000, guid: 41f3fb8c5db1f2245a28dbde964f1cfa, type: 3}
 --- !u!58 &8014344834282031845
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -117,6 +117,10 @@ MonoBehaviour:
   dashTimeOUT: 0
   isDashing: 0
   isSprinting: 0
+  dashSounds:
+  - {fileID: 8300000, guid: d6292bc91a9298744992b70a186b8095, type: 3}
+  - {fileID: 8300000, guid: 952de4e57ce0e1943b2ebc5ab111742d, type: 3}
+  - {fileID: 8300000, guid: 891d4bcd38280cd4d9c0d54129e68d54, type: 3}
 --- !u!114 &2225935080669675814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +143,10 @@ MonoBehaviour:
   shieldUpMax: 5
   isShieldRecharging: 0
   dead: 0
+  deathSounds:
+  - {fileID: 8300000, guid: b4b1cd4fd8c6d6a4ba1ecee99fd6c2e2, type: 3}
+  - {fileID: 8300000, guid: 7ea706bc457869b479ba9a8d2ed33c54, type: 3}
+  - {fileID: 8300000, guid: 763862966cfd4cd4d95efc1f25ba3e2a, type: 3}
 --- !u!50 &2229649527213750922
 Rigidbody2D:
   serializedVersion: 4

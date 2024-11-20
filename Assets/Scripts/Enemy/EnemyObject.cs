@@ -18,7 +18,7 @@ public class EnemyObject : MonoBehaviour
     [SerializeField] private float chaseToDistance;
     [SerializeField] private float speed;
     [SerializeField] private int scoreValue;
-    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip[] deathSounds;
     private float currentDistance;
     private Vector2 playerDirection;
     public float distanceToOtherEnemy;
@@ -48,7 +48,7 @@ public class EnemyObject : MonoBehaviour
                 SpawnManager.SubtractFromCount();
                 LevelManager.IncreaseScore(scoreValue);
                 scored = true;
-                SFXManager.Instance.PlaySoundFXClip(deathSound,gameObject.transform,1f);
+                SFXManager.Instance.PlayRandomSoundFXClip(deathSounds,gameObject.transform,1f);
             }
             enemy.fadeLevel -= 2*Time.deltaTime;
             Destroy(gameObject, 0.5f);

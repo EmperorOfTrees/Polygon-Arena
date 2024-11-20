@@ -19,7 +19,9 @@ public class ShotLogic : MonoBehaviour
     private Color reflectColor = new Color(0f, 0.725f, 1f, 1f);
     private Color reflectColorTrail = new Color(0f, 0.375f, 1f, 1f);
     private Gradient rGrad;
-    
+    [SerializeField] private AudioClip[] hitSounds;
+    [SerializeField] private AudioClip[] deflectSounds;
+
     void Start()
     {
         trail = GetComponent<TrailRenderer>();
@@ -54,14 +56,19 @@ public class ShotLogic : MonoBehaviour
     {     
         if (collision.CompareTag("Player"))
         {
+            if (!isReflected)
+            {
             collision.GetComponent<PlayerStats>().TakeDamage(damage);
             Destroy(gameObject);
+            SFXManager.Instance.PlayRandomSoundFXClip(hitSounds, this.transform, 0.25f);
+            }
         }
         else if (collision.CompareTag("Enemy"))
         {
             if (isReflected)
             {
                 collision.GetComponent<BaseEnemy>().TakeDamage(damage);
+                SFXManager.Instance.PlayRandomSoundFXClip(deflectSounds, this.transform, 0.1f);
             }
             Destroy(gameObject);
         }
@@ -76,6 +83,7 @@ public class ShotLogic : MonoBehaviour
             timer = timeToLive;
             gameObject.GetComponent<SpriteRenderer>().color = reflectColor;
             trail.colorGradient = rGrad;
+            SFXManager.Instance.PlayRandomSoundFXClip(deflectSounds, this.transform, 0.25f);
         }
     }
 }

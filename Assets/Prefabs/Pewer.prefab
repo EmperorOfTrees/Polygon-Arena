@@ -82,6 +82,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -136,3 +138,8 @@ MonoBehaviour:
   shotTran: {fileID: 8843003299367063941}
   timeBetweenShots: 1.5
   hitPoints: 0
+  raylength: 10
+  shootSounds:
+  - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
+  - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}
+  - {fileID: 8300000, guid: 2d6c320cd7cdc1a4d80b1f718fd6c694, type: 3}

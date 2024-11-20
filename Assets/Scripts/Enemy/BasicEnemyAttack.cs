@@ -15,6 +15,8 @@ public class BasicEnemyAttack : MonoBehaviour
     [SerializeField] private int hitPoints;
     [SerializeField] private float raylength = 10f;
 
+    [SerializeField] private AudioClip[] shootSounds;
+
 
     void Start()
     {
@@ -41,6 +43,7 @@ public class BasicEnemyAttack : MonoBehaviour
                 {
                     canFire = false;
                     Instantiate(shot, shotTran.position, Pewer.transform.rotation);
+                    SFXManager.Instance.PlayRandomSoundFXClip(shootSounds, transform, 0.5f);
                 }
             }
         }
