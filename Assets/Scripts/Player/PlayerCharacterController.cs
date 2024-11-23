@@ -57,11 +57,14 @@ public class PlayerCharacterController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            if (playerStats.STA > 0 && !sprintTimeOUT)
+            if (playerStats.STA > 0)
             {
+                if (!sprintTimeOUT)
+                {
                 speed = sprintSpeed;
                 playerStats.AdjustStamina(sprintCost/50);
                 isSprinting = true;
+                }
             }
             else
             {
@@ -97,7 +100,7 @@ public class PlayerCharacterController : MonoBehaviour
         {
             dashTimer -= Time.fixedDeltaTime;
         }
-        else if (sprintTimer <= 0)
+        else if (dashTimer <= 0)
         {
             isDashing = false;
         }

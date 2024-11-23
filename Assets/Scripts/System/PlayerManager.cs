@@ -42,7 +42,6 @@ public class PlayerManager : Singleton<PlayerManager>
         playerCurrentMaxStamina = 100f;
         playerCurrentMaxShield = 5f;
         playerCurrentHealth = playerCurrentMaxHealth;
-
     }
 
     public void GrabStats(PlayerStats playerStats)

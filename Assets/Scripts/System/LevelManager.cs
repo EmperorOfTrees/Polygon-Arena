@@ -12,6 +12,7 @@ public class LevelManager : StaticInstance<LevelManager>
     private int levelScore;
     [SerializeField] private float timeCondtion;
     [SerializeField] private float timer;
+    [SerializeField] private AudioClip bGMusic;
     private PlayerStats playerStats;
     private PlayerManager playerManager;
 
@@ -21,6 +22,7 @@ public class LevelManager : StaticInstance<LevelManager>
         timer = 0;
         playerStats = FindFirstObjectByType<PlayerStats>();
         playerManager = FindFirstObjectByType<PlayerManager>();
+        MusicManager.Instance.PlayBGMusic(bGMusic, 1f);
 
     }
 
@@ -49,8 +51,11 @@ public class LevelManager : StaticInstance<LevelManager>
 
     private void EndLevelWin() //TODO: if winning elements are secured, show a win screen
     {
-        GameManager.NextLevel();
-        playerManager.GrabStats(playerStats);
+        /*these two are temporary, this is just for a tech demo release*/
+        GameManager.ReturnToMenu();
+        playerManager.ResetStats();
+        // GameManager.NextLevel(); reimplement for proper release
+        // playerManager.GrabStats(playerStats);
     }
     public static void IncreaseScore(int addScore)
     {

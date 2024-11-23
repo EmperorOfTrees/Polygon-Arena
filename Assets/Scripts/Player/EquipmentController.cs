@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using static UnityEditor.FilePathAttribute;
 
 
 [RequireComponent(typeof(RotateEquipment))]
@@ -39,9 +37,12 @@ public class EquipmentController : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            if (playerStats.SU > 0 && !isShieldTimedOut)
+            if (playerStats.SU > 0)
             {
+                if (!isShieldTimedOut)
+                {
                 ShowShield();
+                }
             }
             else
             {

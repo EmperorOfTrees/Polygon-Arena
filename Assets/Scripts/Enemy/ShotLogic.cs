@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class ShotLogic : MonoBehaviour
@@ -11,6 +10,7 @@ public class ShotLogic : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private Transform Aim;
     [SerializeField] private float timeToLive;
+    [SerializeField] private float reflectionBonus = 1f;
     private TrailRenderer trail;
     private bool isReflected;
     private float timer;
@@ -67,7 +67,7 @@ public class ShotLogic : MonoBehaviour
         {
             if (isReflected)
             {
-                collision.GetComponent<BaseEnemy>().TakeDamage(damage);
+                collision.GetComponent<BaseEnemy>().TakeDamage((int)((float)damage*reflectionBonus));
                 SFXManager.Instance.PlayRandomSoundFXClip(deflectSounds, this.transform, 0.1f);
             }
             Destroy(gameObject);

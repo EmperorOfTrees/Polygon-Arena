@@ -6,10 +6,16 @@ using UnityEngine.Audio;
 public class SoundMixerManager : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
+    private float masterVol;
+    private void Awake()
+    {
+        
+    }
 
     public void SetMasterVolume(float level)
     {
         audioMixer.SetFloat("MasterVolume", Mathf.Log10(level)*20f);
+        
     }
     public void SetMusicVolume(float level)
     {

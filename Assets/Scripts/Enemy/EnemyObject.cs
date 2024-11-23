@@ -1,5 +1,6 @@
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EnemyObject : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EnemyObject : MonoBehaviour
         Stand = 3, // move to set distance and stay there, move closer if the player moves away
         KeepAway = 4, // move to a distance and try to keep that distance
         KeepAwayStrafe = 5, // move to a distance and try to keep that distance while strafing the player
+        Strange = 6, // intensionally weird
     }
     private GameObject player;
     [SerializeField] private BaseEnemy enemy;
@@ -23,13 +25,15 @@ public class EnemyObject : MonoBehaviour
     private Vector2 playerDirection;
     public float distanceToOtherEnemy;
     private bool scored;
+    private float angle;
+    private float radius;
+
 
     private float currentSpeed;
     public bool tooClose = false;
 
     private void Start()
     {
-
         player = FindFirstObjectByType<PlayerStats>().gameObject;
         currentSpeed = speed;
         ChosenAI(behaviour);
@@ -84,7 +88,11 @@ public class EnemyObject : MonoBehaviour
             {
                 KeepAwayStrafeAI();
             }
-        
+        else if (behaviour.Equals(Behaviour.Strange))
+        {
+            StrangeAI();
+        }
+
     }
     private void CollideAI()
     {
@@ -92,7 +100,9 @@ public class EnemyObject : MonoBehaviour
     }
     private void StrafeAI()
     {
-        Vector3 strafeVector = new Vector3(playerDirection.y, -playerDirection.x, 0);
+        
+        
+        Vector3 strafeVector = new Vector3(-playerDirection.y, playerDirection.x, 0);
         Vector3 strafeDirection = transform.position + strafeVector;
         
         if (chaseToDistance < currentDistance)
@@ -125,7 +135,7 @@ public class EnemyObject : MonoBehaviour
     }
     private void KeepAwayStrafeAI()
     {
-        Vector3 strafeVector = new Vector3(playerDirection.y, -playerDirection.x, 0);
+        Vector3 strafeVector = new Vector3(-playerDirection.y, playerDirection.x, 0);
         Vector3 strafeDirection = transform.position + strafeVector;
         Vector3 away = this.transform.position + (Vector3)(-playerDirection);
         if (chaseToDistance < currentDistance)
@@ -141,4 +151,28 @@ public class EnemyObject : MonoBehaviour
             transform.position = Vector2.MoveTowards(this.transform.position, strafeDirection, currentSpeed * Time.deltaTime);
         }
     }
+
+    private void StrangeAI()
+    {
+
+        radius = playerDirection.magnitude;
+        float x = player.transform.position.x * Mathf.Cos(angle) * radius;
+        float y = player.transform.position.y * Mathf.Sin(angle) * radius;
+        float z = 0;
+        Vector3 difstrafeVect = new(x, y, z);
+        Vector3 strafeVector = new Vector3(playerDirection.y, -playerDirection.x, 0);
+        Vector3 strafeDirection = transform.position + strafeVector;
+
+        if (chaseToDistance < currentDistance)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position + 0.1f * difstrafeVect, currentSpeed * Time.deltaTime);
+            angle += 0.1f * speed * Time.deltaTime;
+        }
+        if (chaseToDistance >= currentDistance)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, difstrafeVect, currentSpeed * Time.deltaTime);
+            angle += speed * Time.deltaTime;
+        }
+    }
+
 }

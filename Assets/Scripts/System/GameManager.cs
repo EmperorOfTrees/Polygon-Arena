@@ -69,11 +69,5 @@ public class GameManager : PersistentSingleton<GameManager>
         sceneLoader = FindAnyObjectByType<SceneLoader>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     
 }

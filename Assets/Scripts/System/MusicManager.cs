@@ -44,7 +44,7 @@ public class MusicManager : Singleton<MusicManager>
         {
             if (!music.isPlaying)
             {
-                PlayBGMusic(lastAudioClip, 1f);
+                PlayBGMusic(lastAudioClip, 0.5f);
             }
         }
     }

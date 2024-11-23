@@ -1,8 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using Systems.SceneManagement;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 namespace Systems.SceneManagement

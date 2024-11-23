@@ -139,6 +139,10 @@ MonoBehaviour:
   timeBetweenShots: 1.5
   hitPoints: 0
   raylength: 10
+  shootSounds:
+  - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
+  - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}
+  - {fileID: 8300000, guid: 2d6c320cd7cdc1a4d80b1f718fd6c694, type: 3}
 --- !u!1 &2933968502270035472
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +282,10 @@ MonoBehaviour:
   timeBetweenShots: 1.5
   hitPoints: 0
   raylength: 10
+  shootSounds:
+  - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
+  - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}
+  - {fileID: 8300000, guid: 2d6c320cd7cdc1a4d80b1f718fd6c694, type: 3}
 --- !u!1 &3483839554047497933
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +394,10 @@ MonoBehaviour:
   timeBetweenShots: 1.5
   hitPoints: 0
   raylength: 10
+  shootSounds:
+  - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
+  - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}
+  - {fileID: 8300000, guid: 2d6c320cd7cdc1a4d80b1f718fd6c694, type: 3}
 --- !u!1 &3913271092978232221
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +535,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 150
-  damageSound: {fileID: 8300000, guid: 7bd4cbb137da0c4469b4d3caae123b32, type: 3}
   swordSounds:
   - {fileID: 8300000, guid: c39b98477a66b5f4cb5b129ca5d1b17c, type: 3}
   - {fileID: 8300000, guid: fa0e443e06af44645a5dc301ee0508a8, type: 3}
@@ -533,7 +544,7 @@ MonoBehaviour:
   dead: 0
   material: {fileID: 0}
   fadeLevel: 1
-  rotationSpeed: 135
+  rotationSpeed: 75
 --- !u!68 &417018081263181694
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -752,6 +763,10 @@ MonoBehaviour:
   timeBetweenShots: 1.5
   hitPoints: 0
   raylength: 10
+  shootSounds:
+  - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
+  - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}
+  - {fileID: 8300000, guid: 2d6c320cd7cdc1a4d80b1f718fd6c694, type: 3}
 --- !u!1 &7172989320963592249
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,3 +875,7 @@ MonoBehaviour:
   timeBetweenShots: 1.5
   hitPoints: 0
   raylength: 10
+  shootSounds:
+  - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
+  - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}
+  - {fileID: 8300000, guid: 2d6c320cd7cdc1a4d80b1f718fd6c694, type: 3}

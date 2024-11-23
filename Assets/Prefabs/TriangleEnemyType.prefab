@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 50
-  damageSound: {fileID: 8300000, guid: 7bd4cbb137da0c4469b4d3caae123b32, type: 3}
   swordSounds:
   - {fileID: 8300000, guid: c39b98477a66b5f4cb5b129ca5d1b17c, type: 3}
   - {fileID: 8300000, guid: fa0e443e06af44645a5dc301ee0508a8, type: 3}
@@ -164,7 +163,7 @@ MonoBehaviour:
   dead: 0
   material: {fileID: 0}
   fadeLevel: 1
-  rotationSpeed: 90
+  rotationSpeed: 75
 --- !u!1001 &4691575059095431703
 PrefabInstance:
   m_ObjectHideFlags: 0

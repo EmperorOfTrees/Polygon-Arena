@@ -138,6 +138,7 @@ MonoBehaviour:
   damage: 10
   Aim: {fileID: 6499207358083086044}
   timeToLive: 2
+  reflectionBonus: 1.5
   hitSounds:
   - {fileID: 8300000, guid: dfe7e20d8069cb141ae1684d032640d2, type: 3}
   - {fileID: 8300000, guid: ea43960cf34c61d4aa9fba252d87eb0e, type: 3}

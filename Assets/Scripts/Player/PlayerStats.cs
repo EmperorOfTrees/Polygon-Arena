@@ -85,7 +85,7 @@ public class PlayerStats : MonoBehaviour
 
     }
 
-    private void Awake()
+    private void Start()
     {
         playerCharacterController = GetComponent<PlayerCharacterController>();
         pManager = PlayerManager.Instance;

@@ -5,10 +5,12 @@ using UnityEngine;
 public class MenuControls : MonoBehaviour
 {
     [SerializeField] private GameObject[] menuSections;
+    [SerializeField] private AudioClip menuMusic;
 
     private void Awake()
     {
         GotoSection(0);
+        MusicManager.Instance.PlayBGMusic(menuMusic,1f);
     }
     public void GotoSection(int index)
     {

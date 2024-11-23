@@ -108,6 +108,10 @@ MonoBehaviour:
   timeBetweenShots: 1.5
   hitPoints: 0
   raylength: 10
+  shootSounds:
+  - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
+  - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}
+  - {fileID: 8300000, guid: 2d6c320cd7cdc1a4d80b1f718fd6c694, type: 3}
 --- !u!1 &2165940600014913878
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +251,10 @@ MonoBehaviour:
   timeBetweenShots: 1.5
   hitPoints: 0
   raylength: 10
+  shootSounds:
+  - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
+  - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}
+  - {fileID: 8300000, guid: 2d6c320cd7cdc1a4d80b1f718fd6c694, type: 3}
 --- !u!1 &3887694434696961212
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +394,10 @@ MonoBehaviour:
   timeBetweenShots: 1.5
   hitPoints: 0
   raylength: 10
+  shootSounds:
+  - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
+  - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}
+  - {fileID: 8300000, guid: 2d6c320cd7cdc1a4d80b1f718fd6c694, type: 3}
 --- !u!1 &4957107032841451172
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +506,10 @@ MonoBehaviour:
   timeBetweenShots: 1.5
   hitPoints: 0
   raylength: 10
+  shootSounds:
+  - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
+  - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}
+  - {fileID: 8300000, guid: 2d6c320cd7cdc1a4d80b1f718fd6c694, type: 3}
 --- !u!1 &5195144558204212067
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +692,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 100
-  damageSound: {fileID: 8300000, guid: 7bd4cbb137da0c4469b4d3caae123b32, type: 3}
   swordSounds:
   - {fileID: 8300000, guid: c39b98477a66b5f4cb5b129ca5d1b17c, type: 3}
   - {fileID: 8300000, guid: fa0e443e06af44645a5dc301ee0508a8, type: 3}
@@ -686,7 +701,7 @@ MonoBehaviour:
   dead: 0
   material: {fileID: 0}
   fadeLevel: 1
-  rotationSpeed: 135
+  rotationSpeed: 75
 --- !u!1 &8390466680788027065
 GameObject:
   m_ObjectHideFlags: 0
