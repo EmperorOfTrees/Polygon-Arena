@@ -60,6 +60,7 @@ public class EquipmentController : MonoBehaviour
     {
         weapon.GetComponent<SpriteRenderer>().enabled = true;
         weapon.GetComponent<BoxCollider2D>().enabled = true;
+        weapon.GetComponent<CapsuleCollider2D>().enabled = true;
         support.GetComponent<SpriteRenderer>().enabled = false;
         support.GetComponent<BoxCollider2D>().enabled = false;
         isShieldUp = false;
@@ -69,6 +70,7 @@ public class EquipmentController : MonoBehaviour
     {
         weapon.GetComponent<SpriteRenderer>().enabled = false;
         weapon.GetComponent<BoxCollider2D>().enabled = false;
+        weapon.GetComponent<CapsuleCollider2D>().enabled = false;
         support.GetComponent<SpriteRenderer>().enabled = true;
         support.GetComponent<BoxCollider2D>().enabled = true;
         isShieldUp = true;
