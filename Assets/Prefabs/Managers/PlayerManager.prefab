@@ -44,3 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d73b4b34cb68cd49b7e8d4b4ab8c625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCurrentHealth: 0
+  playerCurrentMaxHealth: 0
+  playerCurrentMaxMana: 0
+  playerCurrentMaxStamina: 0
+  playerCurrentMaxShield: 0
+  baseBladeDamage: 20
+  baseTipDamage: 40
+  curBladeDamage: 0
+  curTipDamage: 0
+  playerStartingHealth: 100
+  playerStartingMaxHealth: 100
+  playerStartingMaxMana: 100
+  playerStartingMaxStamina: 100
+  playerStartingMaxShield: 5
+  exclusivelyUpgraded: 0

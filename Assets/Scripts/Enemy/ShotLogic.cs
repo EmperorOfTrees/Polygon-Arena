@@ -53,7 +53,7 @@ public class ShotLogic : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {     
+    {
         if (collision.CompareTag("Player"))
         {
             if (!isReflected)
@@ -75,7 +75,7 @@ public class ShotLogic : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "MCircle")
+        if (collision.gameObject.name == "PlayerObject")
         {
             direction = Vector2.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
             rb.velocity = direction.normalized * force;
@@ -84,6 +84,14 @@ public class ShotLogic : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().color = reflectColor;
             trail.colorGradient = rGrad;
             SFXManager.Instance.PlayRandomSoundFXClip(deflectSounds, this.transform, 0.25f);
+        }
+
+        if(collision.gameObject.layer.Equals("STRUCTURE"))
+        {
+            direction = Vector2.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
+            rb.velocity = direction.normalized * force;
+
+            SFXManager.Instance.PlayRandomSoundFXClip(deflectSounds, this.transform, 0.05f);
         }
     }
 }

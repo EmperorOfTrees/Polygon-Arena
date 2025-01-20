@@ -6,6 +6,7 @@ public class BasicEnemyAttack : MonoBehaviour
 {
     [SerializeField] private GameObject shot;
     [SerializeField] private GameObject Pewer;
+    [SerializeField] private LayerMask IgnoreMe;
     private PolygonEnemy parent;
     private float timer;
     [SerializeField] private bool canFire;
@@ -51,7 +52,7 @@ public class BasicEnemyAttack : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, shotTran.transform.position - transform.position, raylength);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, shotTran.transform.position - transform.position, raylength, ~IgnoreMe);
 
 
         if (ray.collider != null)

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerCharacterController))]
 public class PlayerStats : MonoBehaviour
 {
-    private PlayerCharacterController playerCharacterController;
     private EquipmentController equipmentController;
+
+    [SerializeField] private PlayerCharacterController playerCharacterController;
     [SerializeField] private int currentHealth;
     [SerializeField] private float currentStamina;
     [SerializeField] private int currentMana;
@@ -15,6 +15,9 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float maxSTA;
     [SerializeField] private int maxMP;
     [SerializeField] private float shieldUpMax;
+    [SerializeField] private Sword mySword;
+    [SerializeField] private Shield myShield;
+
     public bool isShieldRecharging;
     public bool dead = false;
     PlayerManager pManager;
@@ -87,8 +90,10 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
-        playerCharacterController = GetComponent<PlayerCharacterController>();
+
         pManager = PlayerManager.Instance;
+        pManager.SetPlayerStatReference(this);
+
         equipmentController = GetComponentInChildren<EquipmentController>();
         maxHP = pManager.MHP; maxSTA = pManager.MSTA; maxMP = pManager.MMP; shieldUpMax = pManager.MSU;  currentHealth = pManager.HP; currentStamina = pManager.MSTA; currentMana = pManager.MMP; currentShieldUp = pManager.MSU;
     }
@@ -105,6 +110,7 @@ public class PlayerStats : MonoBehaviour
     public void AdjustHealth(int change)
     {
         currentHealth -= change;
+        pManager.GrabStats(this);
     }
 
     public void AdjustStamina(float change)
@@ -154,5 +160,21 @@ public class PlayerStats : MonoBehaviour
     public void RecoverDamage(int damage)
     {
         currentHealth += damage;
+    }
+    public void SetStats()
+    {
+        maxHP = pManager.MHP; maxSTA = pManager.MSTA; maxMP = pManager.MMP; shieldUpMax = pManager.MSU; currentStamina = pManager.MSTA; currentShieldUp = pManager.MSU;
+        mySword.SetBladeDamage(pManager.BD);
+        mySword.SetTipDamage(pManager.TD);
+    }
+
+    public Sword GetSword()
+    {
+        return mySword;
+    }
+
+    public Shield GetShield()
+    {
+        return myShield;
     }
 }

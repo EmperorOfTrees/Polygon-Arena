@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00602ec07df510d4a879d65178443500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 50
+  maxHitPoints: 500
   swordSounds:
   - {fileID: 8300000, guid: c39b98477a66b5f4cb5b129ca5d1b17c, type: 3}
   - {fileID: 8300000, guid: fa0e443e06af44645a5dc301ee0508a8, type: 3}

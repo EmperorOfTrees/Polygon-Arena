@@ -6,11 +6,11 @@ using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(PlayerStats))]
 public class PlayerCharacterController : MonoBehaviour
 {
-    private PlayerStats playerStats;
     private Rigidbody2D rb2d;
+
+    [SerializeField] private PlayerStats playerStats;
     [SerializeField] private float speed;
     [SerializeField] private float regularSpeed = 4.0f;
     [SerializeField] private float sprintSpeed = 8.0f;
@@ -19,6 +19,7 @@ public class PlayerCharacterController : MonoBehaviour
     [SerializeField] private float sprintTimer;
     [SerializeField] private float dashTimer;
     [SerializeField] private float dashTimeOutTimer;
+
     public bool sprintTimeOUT = false;
     public bool dashTimeOUT = false;
     public bool isDashing;
@@ -30,7 +31,6 @@ public class PlayerCharacterController : MonoBehaviour
 
     private void Awake()
     {
-        playerStats = GetComponent<PlayerStats>();
         rb2d = GetComponent<Rigidbody2D>();
         CheckSprint();
     }

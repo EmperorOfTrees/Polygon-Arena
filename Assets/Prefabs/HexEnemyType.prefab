@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00602ec07df510d4a879d65178443500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 200
+  maxHitPoints: 2000
   swordSounds:
   - {fileID: 8300000, guid: c39b98477a66b5f4cb5b129ca5d1b17c, type: 3}
   - {fileID: 8300000, guid: fa0e443e06af44645a5dc301ee0508a8, type: 3}
@@ -330,6 +330,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 1303279640433986485}
+  IgnoreMe:
+    serializedVersion: 2
+    m_Bits: 0
   canFire: 1
   seesPlayer: 0
   shotTran: {fileID: 7085157036669085603}
@@ -442,6 +445,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 2762915920569570085}
+  IgnoreMe:
+    serializedVersion: 2
+    m_Bits: 0
   canFire: 1
   seesPlayer: 0
   shotTran: {fileID: 2232881105222156357}
@@ -647,6 +653,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 5886944229743756553}
+  IgnoreMe:
+    serializedVersion: 2
+    m_Bits: 0
   canFire: 1
   seesPlayer: 0
   shotTran: {fileID: 8126454775988738790}
@@ -759,6 +768,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 7635054602202187766}
+  IgnoreMe:
+    serializedVersion: 2
+    m_Bits: 0
   canFire: 1
   seesPlayer: 0
   shotTran: {fileID: 393509608142169975}
@@ -871,6 +883,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 8075276392576533768}
+  IgnoreMe:
+    serializedVersion: 2
+    m_Bits: 0
   canFire: 1
   seesPlayer: 0
   shotTran: {fileID: 4247674901050926765}
@@ -1014,6 +1029,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 8705153696446324053}
+  IgnoreMe:
+    serializedVersion: 2
+    m_Bits: 0
   canFire: 1
   seesPlayer: 0
   shotTran: {fileID: 9197671587469020764}

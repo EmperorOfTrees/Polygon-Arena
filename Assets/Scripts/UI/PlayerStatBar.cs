@@ -20,10 +20,12 @@ public class PlayerStatBar : MonoBehaviour
         playerStats = FindAnyObjectByType<PlayerStats>();
         SetUpStat(resourceName);
         barSlider.maxValue = maxStat;
+        easeSlider.maxValue = maxStat;
         barSlider.value = stat;
+        easeSlider.value = stat;
+        PlayerManager.Instance.FindStatBar(this);
     }
 
-    // Update is called once per frame
     void Update()
     {
         stat = playerStats.GetCurrentStat(resourceName);
@@ -42,6 +44,16 @@ public class PlayerStatBar : MonoBehaviour
     {
         maxStat = playerStats.GetMaxStat(resource);
         stat = maxStat;
+    }
 
+    public void StatUpdate()
+    {
+        maxStat = playerStats.GetMaxStat(resourceName);
+        barSlider.maxValue = maxStat;
+        easeSlider.maxValue = maxStat;
+    }
+    public string GetResourceName()
+    {
+        return resourceName;
     }
 }

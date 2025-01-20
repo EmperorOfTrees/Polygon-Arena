@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - EnemyBullet
   - ENEMYOBJECT
+  - PLAYEROBJECT
+  - STRUCTURE
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - Enemy
   - Bullet
   - ENEMYOBJECT
-  - 
-  - 
+  - PLAYEROBJECT
+  - STRUCTURE
   - 
   - 
   - 

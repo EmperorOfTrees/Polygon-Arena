@@ -102,6 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 1392975754913817403}
+  IgnoreMe:
+    serializedVersion: 2
+    m_Bits: 0
   canFire: 1
   seesPlayer: 0
   shotTran: {fileID: 208688498358114576}
@@ -245,6 +248,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 2386021139663267460}
+  IgnoreMe:
+    serializedVersion: 2
+    m_Bits: 0
   canFire: 1
   seesPlayer: 0
   shotTran: {fileID: 2421754539555239996}
@@ -388,6 +394,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 4901373425258316254}
+  IgnoreMe:
+    serializedVersion: 2
+    m_Bits: 0
   canFire: 1
   seesPlayer: 0
   shotTran: {fileID: 8069693012940069109}
@@ -500,6 +509,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 4957107032841451172}
+  IgnoreMe:
+    serializedVersion: 2
+    m_Bits: 0
   canFire: 1
   seesPlayer: 0
   shotTran: {fileID: 3845940977389269589}
@@ -691,7 +703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00602ec07df510d4a879d65178443500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 100
+  maxHitPoints: 1000
   swordSounds:
   - {fileID: 8300000, guid: c39b98477a66b5f4cb5b129ca5d1b17c, type: 3}
   - {fileID: 8300000, guid: fa0e443e06af44645a5dc301ee0508a8, type: 3}

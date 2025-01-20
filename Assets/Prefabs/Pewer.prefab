@@ -133,6 +133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 7368582255001407935}
+  IgnoreMe:
+    serializedVersion: 2
+    m_Bits: 768
   canFire: 1
   seesPlayer: 0
   shotTran: {fileID: 8843003299367063941}

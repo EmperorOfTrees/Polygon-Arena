@@ -25,13 +25,7 @@ public class SpawnManager : StaticInstance<SpawnManager>
     private int nextEnemyIndex;
     private GameObject nextEnemy;
     // handle how many spawns are in the scene, randomly spawn enemies at active spawn points when there are less then max enemies
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;

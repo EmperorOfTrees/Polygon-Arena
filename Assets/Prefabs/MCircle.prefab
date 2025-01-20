@@ -10,9 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1529737653684648740}
   - component: {fileID: 510995828513940056}
-  - component: {fileID: 7529921762528952642}
   - component: {fileID: 2225935080669675814}
-  - component: {fileID: 2229649527213750922}
   - component: {fileID: 8585251125465665562}
   - component: {fileID: 6199699883019166708}
   - component: {fileID: 4965748545394445716}
@@ -93,34 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7529921762528952642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8290702540258717299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111c644855e395240a4b61f6340110f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  regularSpeed: 4
-  sprintSpeed: 8
-  dashSpeed: 20
-  sprintCost: 10
-  sprintTimer: 0
-  dashTimer: 0
-  dashTimeOutTimer: 0
-  sprintTimeOUT: 0
-  dashTimeOUT: 0
-  isDashing: 0
-  isSprinting: 0
-  dashSounds:
-  - {fileID: 8300000, guid: d6292bc91a9298744992b70a186b8095, type: 3}
-  - {fileID: 8300000, guid: 952de4e57ce0e1943b2ebc5ab111742d, type: 3}
-  - {fileID: 8300000, guid: 891d4bcd38280cd4d9c0d54129e68d54, type: 3}
 --- !u!114 &2225935080669675814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ce38e286fd0b24ea2d7d719a658fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCharacterController: {fileID: 0}
   currentHealth: 0
   currentStamina: 0
   currentMana: 0
@@ -141,39 +112,14 @@ MonoBehaviour:
   maxSTA: 0
   maxMP: 0
   shieldUpMax: 5
+  mySword: {fileID: 3282595330903722374}
+  myShield: {fileID: 6415397230641765204}
   isShieldRecharging: 0
   dead: 0
   deathSounds:
   - {fileID: 8300000, guid: b4b1cd4fd8c6d6a4ba1ecee99fd6c2e2, type: 3}
   - {fileID: 8300000, guid: 7ea706bc457869b479ba9a8d2ed33c54, type: 3}
   - {fileID: 8300000, guid: 763862966cfd4cd4d95efc1f25ba3e2a, type: 3}
---- !u!50 &2229649527213750922
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8290702540258717299}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!58 &8585251125465665562
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -488,6 +434,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4405957575582750437, guid: 32e1482f5f170734e95b402c5f2684f2, type: 3}
   m_PrefabInstance: {fileID: 1016229152383828935}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6415397230641765204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6274163873915426963, guid: 32e1482f5f170734e95b402c5f2684f2, type: 3}
+  m_PrefabInstance: {fileID: 1016229152383828935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452042857212732707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259d77d03d7720e4e95c6ce19461e0c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7987008387146262190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -581,6 +538,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a57d0d7045c314c9eae20161d5f992, type: 3}
+--- !u!114 &3282595330903722374 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4853071427239440168, guid: 26a57d0d7045c314c9eae20161d5f992, type: 3}
+  m_PrefabInstance: {fileID: 7987008387146262190}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5961361170150687070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b723d5ebf2d044d4a8544ec373e7c073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5961361170150687070 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4354012899686524912, guid: 26a57d0d7045c314c9eae20161d5f992, type: 3}
