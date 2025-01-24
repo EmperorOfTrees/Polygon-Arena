@@ -8,8 +8,10 @@ public class EquipmentController : MonoBehaviour
 {
     [SerializeField] private GameObject support;
     [SerializeField] private GameObject weapon;
+
     private RotateEquipment rotEquip;
     private PlayerStats playerStats;
+
     public bool isShieldUp;
     public bool isShieldTimedOut;
     private float shieldTimer;

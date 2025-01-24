@@ -5,10 +5,13 @@ using UnityEngine.Animations;
 
 public class RotateEquipment : MonoBehaviour
 {
+    [SerializeField] private float rotationSpeed = 0.03f;
+
     private Camera mainCamera;
+
     private Vector3 mousePos;
     private Vector3 relativePos;
-    [SerializeField] private float rotationSpeed = 0.03f;
+
     private Quaternion targetRot;
     private Quaternion currentRot;
 

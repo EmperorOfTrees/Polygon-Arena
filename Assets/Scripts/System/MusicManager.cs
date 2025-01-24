@@ -5,8 +5,9 @@ using UnityEngine.Audio;
 
 public class MusicManager : Singleton<MusicManager>
 {
-    private AudioSource music;
     private bool musicClipPlaying;
+
+    private AudioSource music;
     private AudioClip lastAudioClip;
     protected override void Awake()
     {

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // TODO: add something for healing pick ups and similar things
-// TODO: Temporary power ups I think
 public enum OneTimeUps
 {
     Jogger = 0,
-
+    
     // definitely add more
 }
 
@@ -33,6 +32,14 @@ public enum MultiUps
 public class PlayerManager : Singleton<PlayerManager>
 {
     private PlayerStats playerStats;
+
+    private ExperienceBar xPBar;
+    private readonly int startingEXP = 0;
+    private readonly int startingLThreshold = 100;
+    private int currentEXP;
+    private int levelingThreshold = 100;
+    private int playerLevel;
+    private float growthFactor = 1.1f;
 
     private PlayerStatBar playerHealthBar;
     private PlayerStatBar playerStaminaBar;
@@ -63,6 +70,16 @@ public class PlayerManager : Singleton<PlayerManager>
     public int HP
     {
         get => playerCurrentHealth;
+    }
+
+    public int EXP
+    {
+        get => currentEXP;
+    }
+
+    public int LEVELTHRESHOLD
+    {
+        get => levelingThreshold;
     }
 
     public int BD
@@ -111,6 +128,9 @@ public class PlayerManager : Singleton<PlayerManager>
         playerCurrentMaxShield = playerStartingMaxShield;
         playerCurrentHealth = playerCurrentMaxHealth;
 
+        currentEXP = startingEXP;
+        levelingThreshold = startingLThreshold;
+
         curBladeDamage = baseBladeDamage;
         curTipDamage = baseTipDamage;
     }
@@ -126,6 +146,9 @@ public class PlayerManager : Singleton<PlayerManager>
         playerCurrentMaxStamina = playerStartingMaxStamina;
         playerCurrentMaxShield = playerStartingMaxShield;
         playerCurrentHealth = playerCurrentMaxHealth;
+
+        currentEXP = startingEXP;
+        levelingThreshold = startingLThreshold;
 
         curBladeDamage = baseBladeDamage;
         curTipDamage = baseTipDamage;
@@ -274,5 +297,30 @@ public class PlayerManager : Singleton<PlayerManager>
                 break;
         }
 
+    }
+    public void SetEXPBar(ExperienceBar EBar)
+    {
+        xPBar = EBar;
+    }
+
+    public void GainEXP(int exp)
+    {
+        currentEXP += exp;
+        if (currentEXP >= levelingThreshold)
+        {
+            int currentThreshold = levelingThreshold;
+            LevelUp();
+            currentEXP -= currentThreshold;
+        }
+        xPBar.SetCurrentEXP(currentEXP);
+    }
+
+    public void LevelUp()
+    {
+        playerLevel++;
+
+        levelingThreshold = (int)(levelingThreshold * growthFactor);
+
+        xPBar.UpdateMaxEXP(levelingThreshold);
     }
 }

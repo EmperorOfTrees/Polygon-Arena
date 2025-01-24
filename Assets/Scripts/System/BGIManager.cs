@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class BGIManager : MonoBehaviour
 {
+    // likely completely redundent
     [SerializeField] private GameObject bigStars;
     [SerializeField] private GameObject smallStars;
-    private Material bigMaterial;
-    private Material smallMaterial;
-    private float bRot;
-    private float sRot;
-    private float bOffX;
-    private float bOffY;
-    private float sOffX;
-    private float sOffY;
 
     [SerializeField] private float bigRotationSpeed;
     [SerializeField] private float smallRotationSpeed;
@@ -21,6 +14,18 @@ public class BGIManager : MonoBehaviour
     [SerializeField] private float bigOffsetSpeedY;
     [SerializeField] private float smallOffsetSpeedX;
     [SerializeField] private float smallOffsetSpeedY;
+
+    private Material bigMaterial;
+    private Material smallMaterial;
+
+    private float bRot;
+    private float sRot;
+
+    private float bOffX;
+    private float bOffY;
+
+    private float sOffX;
+    private float sOffY;
 
     private void Start()
     {

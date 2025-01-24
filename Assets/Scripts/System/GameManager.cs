@@ -14,11 +14,10 @@ public enum Game_State
 public class GameManager : PersistentSingleton<GameManager>
 {
     public int score;
-    //SceneLoader(which scene are we in, going to the next scene, going back to menu), LevelManager(Handles level elements, duration, spawn rules, etc),
-    //SpawnManager(takes care of spawn rules), PlayerManager(manage persistent data about the player, upgrades, health, etc)
+
     public Game_State CurrentState = Game_State.MainMenu;
+
     private SceneLoader sceneLoader;
-    // Start is called before the first frame update
 
     public static void StartGame()
     {

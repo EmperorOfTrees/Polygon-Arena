@@ -9,12 +9,16 @@ public class LevelManager : StaticInstance<LevelManager>
     // Manages a level, how long it has been running and when it ends, might keep tally of how well the player did, keeps track of win conditions
     // Start is called before the first frame update
     [SerializeField] private int scoreCondition;
-    private int levelScore;
     [SerializeField] private float timeCondtion;
+
     [SerializeField] private float timer;
+
     [SerializeField] private AudioClip bGMusic;
+
     private PlayerStats playerStats;
     private PlayerManager playerManager;
+
+    private int levelScore;
 
     void Start()
     {

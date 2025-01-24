@@ -14,23 +14,30 @@ public class EnemyObject : MonoBehaviour
         KeepAwayStrafe = 5, // move to a distance and try to keep that distance while strafing the player
         Strange = 6, // intensionally weird
     }
-    private GameObject player;
     [SerializeField] private BaseEnemy enemy;
     [SerializeField] private Behaviour behaviour;
+
     [SerializeField] private float chaseToDistance;
     [SerializeField] private float speed;
-    [SerializeField] private int scoreValue;
+
     [SerializeField] private AudioClip[] deathSounds;
-    private float currentDistance;
+
+    [SerializeField] private int eXPValue = 5;
+    [SerializeField] private int scoreValue;
+
+    private GameObject player;
+
     private Vector2 playerDirection;
-    public float distanceToOtherEnemy;
-    private bool scored;
+    private float currentDistance;
+    public float distanceToOtherEnemy; // remove?
     private float angle;
     private float radius;
 
-
     private float currentSpeed;
-    public bool tooClose = false;
+    public bool tooClose = false; // remove?
+
+    private bool scored;
+
 
     private void Start()
     {
@@ -53,6 +60,7 @@ public class EnemyObject : MonoBehaviour
                 LevelManager.IncreaseScore(scoreValue);
                 scored = true;
                 SFXManager.Instance.PlayRandomSoundFXClip(deathSounds,gameObject.transform,1f);
+                PlayerManager.Instance.GainEXP(eXPValue);
             }
             enemy.fadeLevel -= 2*Time.deltaTime;
             Destroy(gameObject, 0.5f);
@@ -174,5 +182,4 @@ public class EnemyObject : MonoBehaviour
             angle += speed * Time.deltaTime;
         }
     }
-
 }

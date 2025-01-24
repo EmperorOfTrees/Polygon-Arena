@@ -7,14 +7,17 @@ public class PlayerStats : MonoBehaviour
     private EquipmentController equipmentController;
 
     [SerializeField] private PlayerCharacterController playerCharacterController;
+
     [SerializeField] private int currentHealth;
     [SerializeField] private float currentStamina;
     [SerializeField] private int currentMana;
     [SerializeField] private float currentShieldUp;
+
     [SerializeField] private int maxHP;
     [SerializeField] private float maxSTA;
     [SerializeField] private int maxMP;
     [SerializeField] private float shieldUpMax;
+
     [SerializeField] private Sword mySword;
     [SerializeField] private Shield myShield;
 

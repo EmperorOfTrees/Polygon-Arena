@@ -5,22 +5,28 @@ using UnityEngine;
 
 public class ShotLogic : MonoBehaviour
 {
-    Rigidbody2D rb;
+    [SerializeField] private AudioClip[] hitSounds;
+    [SerializeField] private AudioClip[] deflectSounds;
+
     [SerializeField] private float force;
-    [SerializeField] private int damage;
     [SerializeField] private Transform Aim;
+    [SerializeField] private int damage;
     [SerializeField] private float timeToLive;
+
     [SerializeField] private float reflectionBonus = 1f;
-    private TrailRenderer trail;
+
+    private Rigidbody2D rb;
+    
     private bool isReflected;
     private float timer;
+
     private Vector2 lastVelocity;
     private Vector2 direction;
+    
     private Color reflectColor = new Color(0f, 0.725f, 1f, 1f);
     private Color reflectColorTrail = new Color(0f, 0.375f, 1f, 1f);
     private Gradient rGrad;
-    [SerializeField] private AudioClip[] hitSounds;
-    [SerializeField] private AudioClip[] deflectSounds;
+    private TrailRenderer trail;
 
     void Start()
     {

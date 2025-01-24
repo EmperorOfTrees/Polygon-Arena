@@ -6,17 +6,21 @@ public class BasicEnemyAttack : MonoBehaviour
 {
     [SerializeField] private GameObject shot;
     [SerializeField] private GameObject Pewer;
+    [SerializeField] private Transform shotTran;
+
     [SerializeField] private LayerMask IgnoreMe;
-    private PolygonEnemy parent;
-    private float timer;
+
     [SerializeField] private bool canFire;
     [SerializeField] private bool seesPlayer;
-    [SerializeField] private Transform shotTran;
     [SerializeField] private float timeBetweenShots;
-    [SerializeField] private int hitPoints;
     [SerializeField] private float raylength = 10f;
 
+    [SerializeField] private int hitPoints;
+
     [SerializeField] private AudioClip[] shootSounds;
+
+    private PolygonEnemy parent;
+    private float timer;
 
 
     void Start()

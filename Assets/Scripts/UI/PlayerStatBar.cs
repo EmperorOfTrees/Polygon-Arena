@@ -9,12 +9,14 @@ public class PlayerStatBar : MonoBehaviour
 
     [SerializeField] private Slider barSlider;
     [SerializeField] private Slider easeSlider;
+
     [SerializeField] private float lerpSpeed = 0.01f;
+
     [SerializeField] private float maxStat;
     [SerializeField] private float stat;
+
     [SerializeField] private string resourceName;
 
-    // Start is called before the first frame update
     void Start()
     {
         playerStats = FindAnyObjectByType<PlayerStats>();
