@@ -6,9 +6,10 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public enum Game_State
 {
-    MainMenu,
-    Playing,
-    Paused,
+    MainMenu = 0,
+    Playing = 1,
+    Paused = 2,
+    Upgrading = 3,
 }
 
 public class GameManager : PersistentSingleton<GameManager>
@@ -34,6 +35,12 @@ public class GameManager : PersistentSingleton<GameManager>
     public static void Pause()
     {
         Instance.CurrentState = Game_State.Paused;
+        Time.timeScale = 0;
+    }
+
+    public static void Upgrading()
+    {
+        Instance.CurrentState = Game_State.Upgrading;
         Time.timeScale = 0;
     }
 

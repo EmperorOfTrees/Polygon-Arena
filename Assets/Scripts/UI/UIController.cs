@@ -6,6 +6,7 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] private GameObject PlayerUI;
     [SerializeField] private GameObject PauseUI;
+    [SerializeField] private GameObject UpgradeUI;
     
     void Update()
     {
@@ -21,7 +22,11 @@ public class UIController : MonoBehaviour
             PauseUI.SetActive(false);
         }
         else PauseUI.SetActive(true);
-
+        if(state != Game_State.Upgrading)
+        {
+            UpgradeUI.SetActive(false);
+        }
+        else UpgradeUI.SetActive(true);
 
     }
 }

@@ -3,13 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UpgradeType
-    {
-        MultiUp = 0,
-        SingleUp = 1,
-        ExclusiveUp = 2,
-        ExclusiveUpOverride = 3,
-    }
 
 public class PowerUpTest : MonoBehaviour
 {

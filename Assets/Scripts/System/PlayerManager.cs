@@ -35,15 +35,17 @@ public class PlayerManager : Singleton<PlayerManager>
 
     private ExperienceBar xPBar;
     private readonly int startingEXP = 0;
-    private readonly int startingLThreshold = 100;
     private int currentEXP;
-    private int levelingThreshold = 100;
     private int playerLevel;
-    private float growthFactor = 1.1f;
 
     private PlayerStatBar playerHealthBar;
     private PlayerStatBar playerStaminaBar;
     private PlayerStatBar playerShieldBar;
+    // private PlayerStatBar playerManaBar; TODO: Implement Mana as a resource and make things that use it
+
+    [SerializeField] private readonly int startingLThreshold = 100;
+    [SerializeField] private int levelingThreshold = 100;
+    [SerializeField] private float growthFactor = 1.1f;
 
     [SerializeField] private int playerCurrentHealth;
     [SerializeField] private int playerCurrentMaxHealth;
