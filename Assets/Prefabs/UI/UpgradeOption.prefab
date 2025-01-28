@@ -476,7 +476,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 600, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3490294046576084503
 MonoBehaviour:
@@ -490,6 +490,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c2ee62877bf8d43a10891600afc2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myIcon: {fileID: 1397736800034801279}
+  myRarity: {fileID: 5177426487663736949}
+  myBackground: {fileID: 43286485864142238}
+  myTextFieldBackground: {fileID: 8221056053217458883}
+  myTitle: {fileID: 973158936713158912}
+  myDescription: {fileID: 931706721544606534}
 --- !u!1 &7338248845782175196
 GameObject:
   m_ObjectHideFlags: 0

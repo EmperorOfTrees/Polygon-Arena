@@ -12,6 +12,14 @@ public enum UpgradeType
     ExclusiveUpOverride = 3,
 }
 
+public enum Rarity
+{
+    Common = 0,
+    Uncommon = 1,
+    Rare = 2,
+    Epic = 3,
+}
+
 public class UpgradeMenu : MonoBehaviour
 {
     //reference Upgrade Option displays, random generation of upgrades and assignment of such, function for application, contigency if there are no more upgrades to pick(add the MultiUps as an option), add a skip button to the upgrade system, maybe an auto skip function as well
