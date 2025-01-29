@@ -26,24 +26,42 @@ public class UpgradeOptionDisplay : MonoBehaviour
         myTitle.text = myEntry.Title;
         myDescription.text = myEntry.Description;
         myIcon.sprite = myEntry.Icon;
+
         // Temporary Solution, needs actual sprite and stuff for Rarity
-        if (myEntry.Rarity == Rarity.Common)
+        // just switch it to sprite change when there are images
+        switch (myEntry.Rarity)
         {
-            myRarity.color = Color.grey;
-        } 
-        else if (myEntry.Rarity == Rarity.Uncommon)
-        {
-            myRarity.color = Color.green;
+            case Rarity.Common:
+                myRarity.color = Color.grey;
+                break;
+            case Rarity.Uncommon:
+                myRarity.color = Color.green;
+                break;
+            case Rarity.Rare:
+                myRarity.color = Color.blue;
+                break;
+            case Rarity.Epic:
+                myRarity.color = Color.black;
+                break;
         }
-        else if (myEntry.Rarity == Rarity.Rare)
+
+        // Temporary Solution, needs actual sprite and stuff for Background, need sprite for textfield
+        // just switch it to sprite change when there are images
+        switch (myEntry.UType)
         {
-            myRarity.color = Color.blue;
+            case UpgradeType.MultiUp:
+                myBackground.color = Color.black;
+                break;
+            case UpgradeType.SingleUp:
+                myBackground.color = Color.red;
+                break;
+            case UpgradeType.ExclusiveUp:
+                myBackground.color = Color.white;
+                break;
+            case UpgradeType.ExclusiveUpOverride:
+                myBackground.color = Color.cyan;
+                break;
         }
-        else if (myEntry.Rarity == Rarity.Epic)
-        {
-            myRarity.color = Color.black;
-        }
-        // Might set background based on upgrade type, including textfield background
 
     }
 }

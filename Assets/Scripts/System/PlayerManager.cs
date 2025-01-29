@@ -325,4 +325,24 @@ public class PlayerManager : Singleton<PlayerManager>
 
         xPBar.UpdateMaxEXP(levelingThreshold);
     }
+
+    public Dictionary<OneTimeUps,bool> GetOnesDictionary()
+    {
+        return oneTimeUpgrades;
+    }
+
+    public Dictionary<MultiUps, int> GetMultiesDictionary()
+    {
+        return multiTimeUpgrades;
+    }
+
+    public Dictionary<ExclusiveUps, bool> GetExculisiveDictionary()
+    {
+        return exclusiveUpgrades;
+    }
+
+    public bool ExclusivelyUpgraded()
+    {
+        return exclusivelyUpgraded;
+    }
 }

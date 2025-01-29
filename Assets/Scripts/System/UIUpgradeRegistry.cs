@@ -31,8 +31,6 @@ public class UIUpgradeRegistry : PersistentSingleton<UIUpgradeRegistry>
 
             upgradeEntries.Add(uI, uE[i]);
         }
-
-        Debug.Log(upgradeEntries.ElementAt(0));
     }
 
     public UpgradeEntry GetEntry(UpgradeType uType, int index)

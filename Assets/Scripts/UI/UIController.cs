@@ -22,6 +22,7 @@ public class UIController : MonoBehaviour
             PauseUI.SetActive(false);
         }
         else PauseUI.SetActive(true);
+
         if(state != Game_State.Upgrading)
         {
             UpgradeUI.SetActive(false);
