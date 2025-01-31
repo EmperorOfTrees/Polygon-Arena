@@ -23,7 +23,20 @@ public enum Rarity
     Epic = 3,
 }
 
-public class UpgradeMenu : MonoBehaviour
+public class LocalUpgradeIdentifier
+{
+
+    public UpgradeType upgradeType;
+    public int currentIndex;
+
+    public LocalUpgradeIdentifier(UpgradeType uType, int cIndex)
+    {
+        upgradeType = uType;
+        currentIndex = cIndex;
+    }
+}
+
+public class UpgradeMenu : StaticInstance<UpgradeMenu>
 {
     
     // when implemented, add usable items as upgrades, usable items being like in Binding of Isaac
@@ -32,7 +45,9 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private UpgradeOptionDisplay option2;
     [SerializeField] private UpgradeOptionDisplay option3;
 
-    private Dictionary<UpgradeType, int> avaliableUpgrades = new Dictionary<UpgradeType, int>();
+    [SerializeField] private List<LocalUpgradeIdentifier> availableUpgrades1 = new List<LocalUpgradeIdentifier>();
+
+    //private Dictionary<UpgradeType, int> availableUpgrades = new Dictionary<UpgradeType, int>();
 
     private UpgradeType uType1;
     private UpgradeType uType2;
@@ -44,10 +59,9 @@ public class UpgradeMenu : MonoBehaviour
 
     void Update()
     {
-        while (GameManager.Instance.CurrentState == Game_State.Upgrading)
+        if (Input.GetKeyUp(KeyCode.X))
         {
-
-            // turn on the upgrade menu
+            PlayerManager.Instance.LevelUpTest();
         }
     }
 
@@ -60,7 +74,9 @@ public class UpgradeMenu : MonoBehaviour
         option2.SetOption(uType2, index2);
         option3.SetOption(uType3, index3);
 
-        avaliableUpgrades.Clear();
+        availableUpgrades1.Clear();
+
+        //availableUpgrades.Clear();
     }
 
     public void FillDictionary()
@@ -71,7 +87,8 @@ public class UpgradeMenu : MonoBehaviour
         {
             if (PlayerManager.Instance.GetOnesDictionary().ElementAt(i).Value == false)
             {
-                avaliableUpgrades.Add(UpgradeType.SingleUp, i);
+                availableUpgrades1.Add(new LocalUpgradeIdentifier(UpgradeType.SingleUp, i));
+                //avaliableUpgrades.Add(UpgradeType.SingleUp, i);
             }
         }
 
@@ -81,7 +98,8 @@ public class UpgradeMenu : MonoBehaviour
             {
                 if (PlayerManager.Instance.GetExculisiveDictionary().ElementAt(i).Value == false)
                 {
-                    avaliableUpgrades.Add(UpgradeType.ExclusiveUp, i);
+                    availableUpgrades1.Add(new LocalUpgradeIdentifier(UpgradeType.ExclusiveUp, i));
+                    //avaliableUpgrades.Add(UpgradeType.ExclusiveUp, i);
                 }
             }
         }
@@ -93,17 +111,19 @@ public class UpgradeMenu : MonoBehaviour
                 {
                     if (PlayerManager.Instance.GetExculisiveDictionary().ElementAt(i).Value == false)
                     {
-                        avaliableUpgrades.Add(UpgradeType.ExclusiveUp, i);
+                        availableUpgrades1.Add(new LocalUpgradeIdentifier(UpgradeType.ExclusiveUpOverride, i));
+                        //avaliableUpgrades.Add(UpgradeType.ExclusiveUpOverride, i);
                     }
                 }
             }
         }
 
-        if (avaliableUpgrades.Count < 3)
+        if (availableUpgrades1.Count < 3)
         {
             for (int i = 0; i < Enum.GetValues(typeof(MultiUps)).Length; i++)
             {
-                    avaliableUpgrades.Add(UpgradeType.MultiUp, i);
+                availableUpgrades1.Add(new LocalUpgradeIdentifier(UpgradeType.MultiUp, i));
+                //avaliableUpgrades.Add(UpgradeType.MultiUp, i);
             }
         }
     }
@@ -117,7 +137,7 @@ public class UpgradeMenu : MonoBehaviour
 
         while (a == 0)
         {
-            a = UnityEngine.Random.Range(0, avaliableUpgrades.Count);
+            a = UnityEngine.Random.Range(0, availableUpgrades1.Count);
             if (!randoms.Contains(a))
             {
                 randoms.SetValue(a, 0);
@@ -127,7 +147,7 @@ public class UpgradeMenu : MonoBehaviour
 
         while (b == 0)
         {
-            b = UnityEngine.Random.Range(0, avaliableUpgrades.Count);
+            b = UnityEngine.Random.Range(0, availableUpgrades1.Count);
             if (!randoms.Contains(b))
             {
                 randoms.SetValue(b, 1);
@@ -137,7 +157,7 @@ public class UpgradeMenu : MonoBehaviour
 
         while (c == 0)
         {
-            c = UnityEngine.Random.Range(0, avaliableUpgrades.Count);
+            c = UnityEngine.Random.Range(0, availableUpgrades1.Count);
             if (!randoms.Contains(c))
             {
                 randoms.SetValue(c, 2);
@@ -145,12 +165,34 @@ public class UpgradeMenu : MonoBehaviour
             else c = 0;
         }
 
-        index1 = avaliableUpgrades.ElementAt(randoms[0]).Value;
-        index2 = avaliableUpgrades.ElementAt(randoms[1]).Value;
-        index3 = avaliableUpgrades.ElementAt(randoms[2]).Value;
+        index1 = availableUpgrades1[0].currentIndex;
+        index2 = availableUpgrades1[1].currentIndex;
+        index3 = availableUpgrades1[2].currentIndex;
 
-        uType1 = avaliableUpgrades.ElementAt(randoms[0]).Key;
-        uType2 = avaliableUpgrades.ElementAt(randoms[1]).Key;
-        uType3 = avaliableUpgrades.ElementAt(randoms[2]).Key;
+        uType1 = availableUpgrades1[0].upgradeType;
+        uType2 = availableUpgrades1[1].upgradeType;
+        uType3 = availableUpgrades1[2].upgradeType;
+
+        /*index1 = availableUpgrades.ElementAt(randoms[0]).Value;
+        index2 = availableUpgrades.ElementAt(randoms[1]).Value;
+        index3 = availableUpgrades.ElementAt(randoms[2]).Value;
+
+        uType1 = availableUpgrades.ElementAt(randoms[0]).Key;
+        uType2 = availableUpgrades.ElementAt(randoms[1]).Key;
+        uType3 = availableUpgrades.ElementAt(randoms[2]).Key;*/
+    }
+
+    public void HideGraphics()
+    {
+        option1.TurnOffThis();
+        option2.TurnOffThis();
+        option3.TurnOffThis();
+    }
+
+    public void ShowGraphics()
+    {
+        option1.TurnOnThis();
+        option2.TurnOnThis();
+        option3.TurnOnThis();
     }
 }

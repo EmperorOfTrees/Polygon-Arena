@@ -62,6 +62,23 @@ public class UpgradeOptionDisplay : MonoBehaviour
                 myBackground.color = Color.cyan;
                 break;
         }
-
+    }
+    public void TurnOffThis()
+    {
+        myIcon.enabled = false;
+        myBackground.enabled = false;
+        myRarity.enabled = false;
+        myTextFieldBackground.enabled = false;
+        myTitle.enabled = false;
+        myDescription.enabled = false;
+    }
+    public void TurnOnThis()
+    {
+        myIcon.enabled = true;
+        myBackground.enabled = true;
+        myRarity.enabled = true;
+        myTextFieldBackground.enabled = true;
+        myTitle.enabled = true;
+        myDescription.enabled = true;
     }
 }

@@ -25,9 +25,9 @@ public class UIController : MonoBehaviour
 
         if(state != Game_State.Upgrading)
         {
-            UpgradeUI.SetActive(false);
+            UpgradeUI.GetComponent<UpgradeMenu>().HideGraphics();
         }
-        else UpgradeUI.SetActive(true);
+        else UpgradeUI.GetComponent<UpgradeMenu>().ShowGraphics();
 
     }
 }

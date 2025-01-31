@@ -65,6 +65,7 @@ public class PlayerManager : Singleton<PlayerManager>
     [SerializeField] private float playerStartingMaxShield;
 
     [SerializeField] private bool exclusivelyUpgraded;
+
     [SerializeField] private Dictionary<OneTimeUps, bool> oneTimeUpgrades;
     [SerializeField] private Dictionary<ExclusiveUps, bool> exclusiveUpgrades;
     [SerializeField] private Dictionary<MultiUps, int> multiTimeUpgrades;
@@ -310,9 +311,9 @@ public class PlayerManager : Singleton<PlayerManager>
         currentEXP += exp;
         if (currentEXP >= levelingThreshold)
         {
-            int currentThreshold = levelingThreshold;
+            int previousThreshold = levelingThreshold;
             LevelUp();
-            currentEXP -= currentThreshold;
+            currentEXP -= previousThreshold;
         }
         xPBar.SetCurrentEXP(currentEXP);
     }
@@ -324,6 +325,9 @@ public class PlayerManager : Singleton<PlayerManager>
         levelingThreshold = (int)(levelingThreshold * growthFactor);
 
         xPBar.UpdateMaxEXP(levelingThreshold);
+
+        UpgradeMenu.Instance.GenerateOptions();
+        GameManager.Instance.CurrentState = Game_State.Upgrading;
     }
 
     public Dictionary<OneTimeUps,bool> GetOnesDictionary()
@@ -344,5 +348,10 @@ public class PlayerManager : Singleton<PlayerManager>
     public bool ExclusivelyUpgraded()
     {
         return exclusivelyUpgraded;
+    }
+
+    public void LevelUpTest()
+    {
+        LevelUp();
     }
 }
