@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d73b4b34cb68cd49b7e8d4b4ab8c625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelingThreshold: 100
+  growthFactor: 1.1
   playerCurrentHealth: 0
   playerCurrentMaxHealth: 0
   playerCurrentMaxMana: 0
@@ -53,7 +55,7 @@ MonoBehaviour:
   baseTipDamage: 40
   curBladeDamage: 0
   curTipDamage: 0
-  playerStartingHealth: 100
+  playerStartingHealth: 1000
   playerStartingMaxHealth: 100
   playerStartingMaxMana: 100
   playerStartingMaxStamina: 100

@@ -245,7 +245,7 @@ public class PlayerManager : Singleton<PlayerManager>
 
     private void UpdateStats()
     {
-        playerCurrentMaxHealth = playerStartingMaxHealth + (multiTimeUpgrades[MultiUps.Health] * 10);
+        playerCurrentMaxHealth = playerStartingMaxHealth + (multiTimeUpgrades[MultiUps.Health] * 100);
         playerCurrentMaxMana = playerStartingMaxMana + (multiTimeUpgrades[MultiUps.Mana] * 10);
         playerCurrentMaxStamina = playerStartingMaxStamina + (multiTimeUpgrades[MultiUps.Stamina] * 10);
         playerCurrentMaxShield = playerStartingMaxShield + (multiTimeUpgrades[MultiUps.Shield] * 10);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class UpgradeOptionDisplay : MonoBehaviour
 {
@@ -15,10 +16,17 @@ public class UpgradeOptionDisplay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI myTitle;
     [SerializeField] private TextMeshProUGUI myDescription;
 
+    private UpgradeType myType;
+    private int myIndex;
+
     public void SetOption(UpgradeType uType, int index)
     {
         myEntry = UIUpgradeRegistry.Instance.GetEntry(uType, index);
+
         DisplayEntry();
+
+        myType = uType;
+        myIndex = index;
     }
 
     private void DisplayEntry()
@@ -80,5 +88,11 @@ public class UpgradeOptionDisplay : MonoBehaviour
         myTextFieldBackground.enabled = true;
         myTitle.enabled = true;
         myDescription.enabled = true;
+    }
+
+
+    public void OnClickOption()
+    {
+        PlayerManager.Instance.Upgrade(myType, myIndex);
     }
 }

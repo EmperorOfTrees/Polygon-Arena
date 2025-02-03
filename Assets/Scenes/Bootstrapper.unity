@@ -766,6 +766,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3137176273513057959, guid: 546111373ed0067429dd613e91986c83, type: 3}
+      propertyPath: uE.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137176273513057959, guid: 546111373ed0067429dd613e91986c83, type: 3}
+      propertyPath: 'uE.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: f6c27c36dac11734484d3e7551df305b, type: 2}
+    - target: {fileID: 3137176273513057959, guid: 546111373ed0067429dd613e91986c83, type: 3}
+      propertyPath: 'uE.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d476689cd77a554786e0851474246ab, type: 2}
+    - target: {fileID: 3137176273513057959, guid: 546111373ed0067429dd613e91986c83, type: 3}
+      propertyPath: 'uE.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a316fbb28ed6eed49a5f8eb9879a7204, type: 2}
+    - target: {fileID: 3137176273513057959, guid: 546111373ed0067429dd613e91986c83, type: 3}
+      propertyPath: 'uE.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 99d77084082e78b40ade93fb8b5c8eef, type: 2}
+    - target: {fileID: 3137176273513057959, guid: 546111373ed0067429dd613e91986c83, type: 3}
+      propertyPath: 'uE.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2efb4691192e8bf43807cb41dd04701c, type: 2}
+    - target: {fileID: 3137176273513057959, guid: 546111373ed0067429dd613e91986c83, type: 3}
+      propertyPath: 'uE.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 481213264a3ff7c44a9b5e91ed4eb61a, type: 2}
+    - target: {fileID: 3137176273513057959, guid: 546111373ed0067429dd613e91986c83, type: 3}
+      propertyPath: 'uE.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 881e9a956f1f75742829d072ef9afcb8, type: 2}
+    - target: {fileID: 3137176273513057959, guid: 546111373ed0067429dd613e91986c83, type: 3}
+      propertyPath: 'uE.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d1abdcbfb0bfb547bbfaa909abf5b16, type: 2}
     - target: {fileID: 3870163475740676781, guid: 546111373ed0067429dd613e91986c83, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -1,11 +1,8 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum UpgradeType
 {
@@ -25,7 +22,6 @@ public enum Rarity
 
 public class LocalUpgradeIdentifier
 {
-
     public UpgradeType upgradeType;
     public int currentIndex;
 
@@ -45,7 +41,7 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
     [SerializeField] private UpgradeOptionDisplay option2;
     [SerializeField] private UpgradeOptionDisplay option3;
 
-    [SerializeField] private List<LocalUpgradeIdentifier> availableUpgrades1 = new List<LocalUpgradeIdentifier>();
+    [SerializeField] private List<LocalUpgradeIdentifier> availableUpgrades = new List<LocalUpgradeIdentifier>();
 
     //private Dictionary<UpgradeType, int> availableUpgrades = new Dictionary<UpgradeType, int>();
 
@@ -74,9 +70,8 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
         option2.SetOption(uType2, index2);
         option3.SetOption(uType3, index3);
 
-        availableUpgrades1.Clear();
+        availableUpgrades.Clear();
 
-        //availableUpgrades.Clear();
     }
 
     public void FillDictionary()
@@ -87,8 +82,7 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
         {
             if (PlayerManager.Instance.GetOnesDictionary().ElementAt(i).Value == false)
             {
-                availableUpgrades1.Add(new LocalUpgradeIdentifier(UpgradeType.SingleUp, i));
-                //avaliableUpgrades.Add(UpgradeType.SingleUp, i);
+                availableUpgrades.Add(new LocalUpgradeIdentifier(UpgradeType.SingleUp, i));
             }
         }
 
@@ -98,8 +92,7 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
             {
                 if (PlayerManager.Instance.GetExculisiveDictionary().ElementAt(i).Value == false)
                 {
-                    availableUpgrades1.Add(new LocalUpgradeIdentifier(UpgradeType.ExclusiveUp, i));
-                    //avaliableUpgrades.Add(UpgradeType.ExclusiveUp, i);
+                    availableUpgrades.Add(new LocalUpgradeIdentifier(UpgradeType.ExclusiveUp, i));
                 }
             }
         }
@@ -111,19 +104,17 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
                 {
                     if (PlayerManager.Instance.GetExculisiveDictionary().ElementAt(i).Value == false)
                     {
-                        availableUpgrades1.Add(new LocalUpgradeIdentifier(UpgradeType.ExclusiveUpOverride, i));
-                        //avaliableUpgrades.Add(UpgradeType.ExclusiveUpOverride, i);
+                        availableUpgrades.Add(new LocalUpgradeIdentifier(UpgradeType.ExclusiveUpOverride, i));
                     }
                 }
             }
         }
 
-        if (availableUpgrades1.Count < 3)
+        if (availableUpgrades.Count < 3)
         {
             for (int i = 0; i < Enum.GetValues(typeof(MultiUps)).Length; i++)
             {
-                availableUpgrades1.Add(new LocalUpgradeIdentifier(UpgradeType.MultiUp, i));
-                //avaliableUpgrades.Add(UpgradeType.MultiUp, i);
+                availableUpgrades.Add(new LocalUpgradeIdentifier(UpgradeType.MultiUp, i));
             }
         }
     }
@@ -137,7 +128,7 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
 
         while (a == 0)
         {
-            a = UnityEngine.Random.Range(0, availableUpgrades1.Count);
+            a = UnityEngine.Random.Range(0, availableUpgrades.Count);
             if (!randoms.Contains(a))
             {
                 randoms.SetValue(a, 0);
@@ -147,7 +138,7 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
 
         while (b == 0)
         {
-            b = UnityEngine.Random.Range(0, availableUpgrades1.Count);
+            b = UnityEngine.Random.Range(0, availableUpgrades.Count);
             if (!randoms.Contains(b))
             {
                 randoms.SetValue(b, 1);
@@ -157,7 +148,7 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
 
         while (c == 0)
         {
-            c = UnityEngine.Random.Range(0, availableUpgrades1.Count);
+            c = UnityEngine.Random.Range(0, availableUpgrades.Count);
             if (!randoms.Contains(c))
             {
                 randoms.SetValue(c, 2);
@@ -165,21 +156,14 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
             else c = 0;
         }
 
-        index1 = availableUpgrades1[0].currentIndex;
-        index2 = availableUpgrades1[1].currentIndex;
-        index3 = availableUpgrades1[2].currentIndex;
+        index1 = availableUpgrades[0].currentIndex;
+        index2 = availableUpgrades[1].currentIndex;
+        index3 = availableUpgrades[2].currentIndex;
 
-        uType1 = availableUpgrades1[0].upgradeType;
-        uType2 = availableUpgrades1[1].upgradeType;
-        uType3 = availableUpgrades1[2].upgradeType;
+        uType1 = availableUpgrades[0].upgradeType;
+        uType2 = availableUpgrades[1].upgradeType;
+        uType3 = availableUpgrades[2].upgradeType;
 
-        /*index1 = availableUpgrades.ElementAt(randoms[0]).Value;
-        index2 = availableUpgrades.ElementAt(randoms[1]).Value;
-        index3 = availableUpgrades.ElementAt(randoms[2]).Value;
-
-        uType1 = availableUpgrades.ElementAt(randoms[0]).Key;
-        uType2 = availableUpgrades.ElementAt(randoms[1]).Key;
-        uType3 = availableUpgrades.ElementAt(randoms[2]).Key;*/
     }
 
     public void HideGraphics()
@@ -195,4 +179,5 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
         option2.TurnOnThis();
         option3.TurnOnThis();
     }
+
 }

@@ -35,8 +35,16 @@ public class UIUpgradeRegistry : PersistentSingleton<UIUpgradeRegistry>
 
     public UpgradeEntry GetEntry(UpgradeType uType, int index)
     {
-        UpgradeIdentifer uI = new(uType, index);
 
-        return upgradeEntries[uI];
+        for (int i = 0; i < upgradeEntries.Count; i++)
+        {
+            UpgradeIdentifer uEUI = upgradeEntries.ElementAt(i).Key;
+            if (uEUI.upgradeType == uType && uEUI.index == index)
+            {
+                return upgradeEntries[uEUI];
+            }
+        }
+        return null;
+        
     }
 }
