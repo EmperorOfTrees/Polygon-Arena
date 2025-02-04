@@ -10,13 +10,13 @@ public class Sword : PlayerEquipment
 
     }
 
-    [SerializeField] private GameObject bladePoint;
-    [SerializeField] private CapsuleCollider2D tipCollider;
-    [SerializeField] private BoxCollider2D bladeCollider;
-    public Vector3 previousPos;
-    private float bladeSpeed;
-    [SerializeField] private int bladeDamage;
-    [SerializeField] private int tipDamage;
+    [SerializeField] protected GameObject bladePoint;
+    [SerializeField] protected CapsuleCollider2D tipCollider;
+    [SerializeField] protected BoxCollider2D bladeCollider;
+    protected Vector3 previousPos;
+    protected float bladeSpeed;
+    [SerializeField] protected int bladeDamage;
+    [SerializeField] protected int tipDamage;
     protected override void Awake()
     {
         tipCollider = GetComponent<CapsuleCollider2D>();
@@ -46,7 +46,7 @@ public class Sword : PlayerEquipment
     {
         return tipDamage;
     }
-    //TODO: might not be the best way to do this with upgrades, maybe a switch case instead
+
 
     public void SetTipDamage(int dmg)
     {

@@ -213,6 +213,13 @@ public class PlayerManager : Singleton<PlayerManager>
             if (!exclusiveUpgrades[index])
             {
                 exclusiveUpgrades[index] = true;
+                switch (index)
+                {
+                    case 0:
+                        playerStats.SetWeaponType(CurrentWeapon.Hoplite);
+                        break;
+
+                }
             }
         }
         else return;
@@ -327,7 +334,7 @@ public class PlayerManager : Singleton<PlayerManager>
         xPBar.UpdateMaxEXP(levelingThreshold);
 
         UpgradeMenu.Instance.GenerateOptions();
-        GameManager.Instance.CurrentState = Game_State.Upgrading;
+        GameManager.Upgrading();
     }
 
     public Dictionary<OneTimeUps,bool> GetOnesDictionary()

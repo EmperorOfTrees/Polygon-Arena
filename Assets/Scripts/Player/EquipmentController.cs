@@ -2,12 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CurrentWeapon
+{
+    None = 0,
+    Sword = 1,
+    Hoplite = 2,
+
+}
 
 [RequireComponent(typeof(RotateEquipment))]
 public class EquipmentController : MonoBehaviour
 {
     [SerializeField] private GameObject support;
     [SerializeField] private GameObject weapon;
+    [SerializeField] private GameObject hoplite;
+
+    private CurrentWeapon currentWeapon = CurrentWeapon.Sword;
 
     private RotateEquipment rotEquip;
     private PlayerStats playerStats;
@@ -37,25 +47,49 @@ public class EquipmentController : MonoBehaviour
     }
     private void ShowEquipment()
     {
-        if (Input.GetMouseButton(1))
+        if (currentWeapon == CurrentWeapon.Sword)
         {
-            if (playerStats.SU > 0)
+            if (hoplite.activeSelf) LeaveHoplite();
+
+            if (Input.GetMouseButton(1))
             {
-                if (!isShieldTimedOut)
+                if (playerStats.SU > 0)
                 {
-                ShowShield();
+                    if (!isShieldTimedOut)
+                    {
+                        ShowShield();
+                    }
+                }
+                else
+                {
+                    ShieldTimeOut();
+                    ShowSword();
                 }
             }
             else
             {
-                ShieldTimeOut();
                 ShowSword();
             }
+
         }
-        else
+        else if (currentWeapon == CurrentWeapon.Hoplite)
         {
-            ShowSword();
+            ShowHoplite();
         }
+    }
+
+    private void ShowHoplite()
+    {
+        hoplite.SetActive(true);
+        weapon.SetActive(false);
+        support.SetActive(false);
+    }
+
+    private void LeaveHoplite()
+    {
+        hoplite.SetActive(false);
+        weapon.SetActive(true);
+        support.SetActive(true);
     }
 
     private void ShowSword()
@@ -94,6 +128,10 @@ public class EquipmentController : MonoBehaviour
         {
             isShieldTimedOut = false;
         }
+    }
 
+    public void SetCurrentWeapon(CurrentWeapon newWeapon)
+    {
+        currentWeapon = newWeapon;
     }
 }

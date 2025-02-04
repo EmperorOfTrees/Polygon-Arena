@@ -15,6 +15,7 @@ public class UpgradeOptionDisplay : MonoBehaviour
     [SerializeField] private Image myTextFieldBackground;
     [SerializeField] private TextMeshProUGUI myTitle;
     [SerializeField] private TextMeshProUGUI myDescription;
+    [SerializeField] private Button myButton;
 
     private UpgradeType myType;
     private int myIndex;
@@ -79,6 +80,8 @@ public class UpgradeOptionDisplay : MonoBehaviour
         myTextFieldBackground.enabled = false;
         myTitle.enabled = false;
         myDescription.enabled = false;
+        myButton.enabled = false;
+        myButton.gameObject.GetComponent<Image>().color = new Color(1,1,1,0);
     }
     public void TurnOnThis()
     {
@@ -88,11 +91,14 @@ public class UpgradeOptionDisplay : MonoBehaviour
         myTextFieldBackground.enabled = true;
         myTitle.enabled = true;
         myDescription.enabled = true;
+        myButton.enabled = true;
+        myButton.gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
     }
 
 
     public void OnClickOption()
     {
         PlayerManager.Instance.Upgrade(myType, myIndex);
+        GameManager.Resume();
     }
 }

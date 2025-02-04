@@ -176,29 +176,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2225935080669675814, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
-      propertyPath: mySword
-      value: 
-      objectReference: {fileID: 5230191623894116767}
-    - target: {fileID: 2225935080669675814, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
-      propertyPath: myShield
-      value: 
-      objectReference: {fileID: 4328893101069089613}
-    - target: {fileID: 2225935080669675814, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
       propertyPath: playerCharacterController
       value: 
       objectReference: {fileID: 9023655685501637752}
-    - target: {fileID: 3282595330903722374, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
-      propertyPath: tipDamage
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 3282595330903722374, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
-      propertyPath: bladeDamage
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7529921762528952642, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 8031619464387923606, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8109072538785245308, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
+      propertyPath: hoplite
+      value: 
+      objectReference: {fileID: 751340022309154447}
     - target: {fileID: 8290702540258717299, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
       propertyPath: m_Name
       value: MCircle
@@ -208,28 +196,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
---- !u!114 &4328893101069089613 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6415397230641765204, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
+--- !u!1 &751340022309154447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8031619464387923606, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
   m_PrefabInstance: {fileID: 7285487867515756569}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259d77d03d7720e4e95c6ce19461e0c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5230191623894116767 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3282595330903722374, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}
-  m_PrefabInstance: {fileID: 7285487867515756569}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b723d5ebf2d044d4a8544ec373e7c073, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &8080012808811993917 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1529737653684648740, guid: ab46174ef3b472f449cebed2e5af2987, type: 3}

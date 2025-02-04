@@ -629,6 +629,7 @@ MonoBehaviour:
   myTextFieldBackground: {fileID: 8221056053217458883}
   myTitle: {fileID: 973158936713158912}
   myDescription: {fileID: 931706721544606534}
+  myButton: {fileID: 6269139612120038762}
 --- !u!1 &7338248845782175196
 GameObject:
   m_ObjectHideFlags: 0
