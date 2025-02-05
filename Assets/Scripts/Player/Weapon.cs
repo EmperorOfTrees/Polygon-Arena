@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Sword : PlayerEquipment
+public class Weapon : PlayerEquipment
 {
-    public Sword() : base(EquipmentInterface.eType.Sword)
+    public Weapon() : base(EquipmentInterface.eType.Sword)
     {
 
     }

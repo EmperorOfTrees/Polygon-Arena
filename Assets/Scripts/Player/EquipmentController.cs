@@ -4,9 +4,8 @@ using UnityEngine;
 
 public enum CurrentWeapon
 {
-    None = 0,
-    Sword = 1,
-    Hoplite = 2,
+    Sword = 0,
+    Hoplite = 1,
 
 }
 
@@ -17,7 +16,10 @@ public class EquipmentController : MonoBehaviour
     [SerializeField] private GameObject weapon;
     [SerializeField] private GameObject hoplite;
 
-    private CurrentWeapon currentWeapon = CurrentWeapon.Sword;
+    [SerializeField] private List<Weapon> weaponSets = new();
+
+    [SerializeField] private CurrentWeapon currentWeapon = CurrentWeapon.Sword;
+
 
     private RotateEquipment rotEquip;
     private PlayerStats playerStats;
@@ -133,5 +135,6 @@ public class EquipmentController : MonoBehaviour
     public void SetCurrentWeapon(CurrentWeapon newWeapon)
     {
         currentWeapon = newWeapon;
+        playerStats.ChangeWeapon(weaponSets[(int)newWeapon]);
     }
 }

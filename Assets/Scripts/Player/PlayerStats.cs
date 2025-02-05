@@ -18,7 +18,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int maxMP;
     [SerializeField] private float shieldUpMax;
 
-    [SerializeField] private Sword myWeapon;
+    [SerializeField] private Weapon myWeapon;
     [SerializeField] private Shield myShield;
 
     public bool isShieldRecharging;
@@ -172,7 +172,7 @@ public class PlayerStats : MonoBehaviour
     }
 
 
-    public Sword GetSword()
+    public Weapon GetSword()
     {
         return myWeapon;
     }
@@ -185,5 +185,10 @@ public class PlayerStats : MonoBehaviour
     public void SetWeaponType(CurrentWeapon newWeapon)
     {
         equipmentController.SetCurrentWeapon(newWeapon);
+    }
+
+    public void ChangeWeapon(Weapon newWeapon)
+    {
+        myWeapon = newWeapon;
     }
 }

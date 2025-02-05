@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spear : Sword
+public class Spear : Weapon
 {
     protected override void Awake()
     {

@@ -64,12 +64,12 @@ public class BaseEnemy : MonoBehaviour
         {
             if (collision.GetType() == typeof(CapsuleCollider2D))
             {
-                TakeDamage((int)collision.GetComponent<Sword>().GetSpeed() * collision.GetComponent<Sword>().GetTipDamage());
+                TakeDamage((int)collision.GetComponent<Weapon>().GetSpeed() * collision.GetComponent<Weapon>().GetTipDamage());
                 print("hit with the tip!");
             }
             else if (collision.GetType() == typeof(BoxCollider2D))
             {
-                TakeDamage((int)collision.GetComponent<Sword>().GetSpeed() * collision.GetComponent<Sword>().GetBladeDamage());
+                TakeDamage((int)collision.GetComponent<Weapon>().GetSpeed() * collision.GetComponent<Weapon>().GetBladeDamage());
                 print("hit with the blade!");
             }
             SFXManager.Instance.PlayRandomSoundFXClip(swordSounds, collision.gameObject.transform, 0.25f);

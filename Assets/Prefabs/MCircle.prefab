@@ -112,7 +112,7 @@ MonoBehaviour:
   maxSTA: 0
   maxMP: 0
   shieldUpMax: 5
-  mySword: {fileID: 3282595330903722374}
+  myWeapon: {fileID: 3282595330903722374}
   myShield: {fileID: 6415397230641765204}
   isShieldRecharging: 0
   dead: 0
@@ -346,6 +346,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   support: {fileID: 1452042857212732707}
   weapon: {fileID: 5961361170150687070}
+  hoplite: {fileID: 8031619464387923606}
+  currentWeapon: 1
   isShieldUp: 0
   isShieldTimedOut: 0
 --- !u!1001 &1016229152383828935
@@ -507,6 +509,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa3557d0867c79a408fab78696703090, type: 3}
+--- !u!1 &8031619464387923606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 228846205233373834, guid: fa3557d0867c79a408fab78696703090, type: 3}
+  m_PrefabInstance: {fileID: 7807848879773527068}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8125258035224086034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2060882891159546382, guid: fa3557d0867c79a408fab78696703090, type: 3}
