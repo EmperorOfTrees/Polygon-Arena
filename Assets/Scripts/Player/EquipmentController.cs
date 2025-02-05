@@ -16,7 +16,19 @@ public class EquipmentController : MonoBehaviour
     [SerializeField] private GameObject weapon;
     [SerializeField] private GameObject hoplite;
 
+    private float counter = 0;
+
+    [SerializeField] private float shieldDecay = 0.02f;
+
+    [SerializeField] private float shieldDecayWeaponModifier = 1f;
+
+    [SerializeField] private float shieldDecayAbilityModifier = 1f;
+
+    [SerializeField] private float shieldDecayWeaponCost = 1f;
+
     [SerializeField] private List<Weapon> weaponSets = new();
+
+    private Weapon activeWeapon;
 
     [SerializeField] private CurrentWeapon currentWeapon = CurrentWeapon.Sword;
 
@@ -44,7 +56,7 @@ public class EquipmentController : MonoBehaviour
     {
         if (isShieldUp)
         {
-            playerStats.AdjustShield(0.02f);
+            playerStats.AdjustShield(shieldDecay * shieldDecayAbilityModifier * shieldDecayWeaponModifier);
         }
     }
     private void ShowEquipment()
@@ -77,6 +89,34 @@ public class EquipmentController : MonoBehaviour
         else if (currentWeapon == CurrentWeapon.Hoplite)
         {
             ShowHoplite();
+
+            
+            if (Input.GetMouseButton(1))
+            {
+                if (playerStats.SU > 0)
+                {
+                    if (!isShieldTimedOut)
+                    {
+                        if(counter > 0.53f)
+                        {
+                        playerStats.AdjustShield(shieldDecayWeaponCost);
+                        }
+                        counter += Time.deltaTime;
+                        activeWeapon.GetComponent<Animator>().SetBool("Thrust", true);
+
+                        isShieldUp = true;
+                    }
+                }
+                else
+                {
+                    ShieldTimeOut();
+                    activeWeapon.GetComponent<Animator>().SetBool("Thrust", false);
+                }
+            }
+            else
+            {
+                activeWeapon.GetComponent<Animator>().SetBool("Thrust", false);
+            }
         }
     }
 
@@ -85,6 +125,8 @@ public class EquipmentController : MonoBehaviour
         hoplite.SetActive(true);
         weapon.SetActive(false);
         support.SetActive(false);
+        shieldDecayWeaponCost = 0.75f;
+        shieldDecayWeaponModifier = 0.1f;
     }
 
     private void LeaveHoplite()
@@ -92,6 +134,8 @@ public class EquipmentController : MonoBehaviour
         hoplite.SetActive(false);
         weapon.SetActive(true);
         support.SetActive(true);
+        shieldDecayWeaponCost = 1;
+        shieldDecayWeaponModifier = 1;
     }
 
     private void ShowSword()
@@ -136,5 +180,6 @@ public class EquipmentController : MonoBehaviour
     {
         currentWeapon = newWeapon;
         playerStats.ChangeWeapon(weaponSets[(int)newWeapon]);
+        activeWeapon = weaponSets[(int)newWeapon];
     }
 }

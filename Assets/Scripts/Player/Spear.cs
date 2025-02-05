@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Spear : Weapon
 {
+    [SerializeField] private Animator animator;
     protected override void Awake()
     {
 
@@ -29,4 +30,9 @@ public class Spear : Weapon
         return (int)(tipDamage*1.5f);
     }
 
+
+    public Animator GetAnimator()
+    {
+        return animator;
+    }
 }

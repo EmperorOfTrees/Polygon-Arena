@@ -316,6 +316,7 @@ GameObject:
   - component: {fileID: 7447179050174407879}
   - component: {fileID: 9210864878592735363}
   - component: {fileID: 5561440665675145066}
+  - component: {fileID: 6208828356345302805}
   m_Layer: 3
   m_Name: Spear
   m_TagString: Sword
@@ -412,6 +413,7 @@ MonoBehaviour:
   bladeCollider: {fileID: 5561440665675145066}
   bladeDamage: 20
   tipDamage: 40
+  animator: {fileID: 6208828356345302805}
 --- !u!61 &5561440665675145066
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -458,6 +460,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &6208828356345302805
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517660029651669966}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 29c33733eb52c0d4d9be5b118f15d5ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8057839894899898071
 GameObject:
   m_ObjectHideFlags: 0
