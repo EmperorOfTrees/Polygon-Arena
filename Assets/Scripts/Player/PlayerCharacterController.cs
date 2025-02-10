@@ -11,14 +11,28 @@ public class PlayerCharacterController : MonoBehaviour
     private Rigidbody2D rb2d;
 
     [SerializeField] private PlayerStats playerStats;
+
     [SerializeField] private float speed;
     [SerializeField] private float regularSpeed = 4.0f;
     [SerializeField] private float sprintSpeed = 8.0f;
     [SerializeField] private float dashSpeed = 20.0f;
+
+    [SerializeField] private float regularSpeedModifier = 1f;
+    [SerializeField] private float sprintSpeedModifier = 1f;
+    [SerializeField] private float dashSpeedModifier = 1f;
+
+    private float joggerModSpeed = 1f;
+    private float joggerModCost = 1f;
+
+
     [SerializeField] private float sprintCost = 6.0f;
+    [SerializeField] private float sprintCostModifier = 1f;
+
     [SerializeField] private float sprintTimer;
     [SerializeField] private float dashTimer;
     [SerializeField] private float dashTimeOutTimer;
+
+    private bool jogger = false;
 
     public bool sprintTimeOUT = false;
     public bool dashTimeOUT = false;
@@ -35,6 +49,11 @@ public class PlayerCharacterController : MonoBehaviour
         CheckSprint();
     }
 
+    private void Start()
+    {
+        PlayerManager.Instance.SetPlayerControlReference(this);
+    }
+
     private void Update()
     {
         motionVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -42,7 +61,12 @@ public class PlayerCharacterController : MonoBehaviour
         {
             GameManager.Pause();
         }
-        
+        if (jogger)
+        {
+            joggerModCost = 0.5f;
+            joggerModSpeed = 1.2f;
+        }
+
         Dash();
     }
 
@@ -61,21 +85,21 @@ public class PlayerCharacterController : MonoBehaviour
             {
                 if (!sprintTimeOUT)
                 {
-                speed = sprintSpeed;
-                playerStats.AdjustStamina(sprintCost/50);
+                speed = sprintSpeed * sprintSpeedModifier;
+                playerStats.AdjustStamina((sprintCost * sprintCostModifier * joggerModCost) /50);
                 isSprinting = true;
                 }
             }
             else
             {
                 SprintTimeOut();
-                speed = regularSpeed;
+                speed = regularSpeed * regularSpeedModifier * joggerModSpeed;
                 isSprinting= false;
             }
         }
         else
         {
-            speed = regularSpeed;
+            speed = regularSpeed * regularSpeedModifier * joggerModSpeed;
             isSprinting = false;
         }
     }
@@ -123,7 +147,7 @@ public class PlayerCharacterController : MonoBehaviour
         }
         else if (isDashing)
         {
-            rb2d.velocity = motionVector * dashSpeed;
+            rb2d.velocity = motionVector * (dashSpeed * dashSpeedModifier);
         }
     }
 
@@ -138,4 +162,31 @@ public class PlayerCharacterController : MonoBehaviour
             SFXManager.Instance.PlayRandomSoundFXClip(dashSounds, transform, 1f);
         }
     }
+
+    public void SetRegularSpeedMod(float newMod)
+    {
+        regularSpeedModifier = newMod;
+    }
+
+    public void SetSprintCostMod(float newMod)
+    {
+        sprintCostModifier = newMod;
+    }
+
+    public void SetSprintSpeedMod(float newMod)
+    {
+        sprintSpeedModifier = newMod;
+    }
+
+    public void SetDashSpeedMod(float newMod)
+    {
+        dashSpeedModifier = newMod;
+    }
+
+    public void SetJogger(bool state)
+    {
+        jogger = state;
+    }
+
+    
 }

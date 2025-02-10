@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 4193053506244782793, guid: d862810cc617001479364b054d7bbc3c, type: 3}
   title: Hoplite
-  description: Changes weapons to a spear, shield becomes permanent but off center
+  description: Changes your weapon to a spear, and your shield becomes permanent
+    but off center and smaller. Instead of raising your shield on right mouse button,
+    you thrust your spear.
   rarity: 0
   uType: 2
   index: 0

@@ -13,6 +13,7 @@ public class UpgradeOptionDisplay : MonoBehaviour
     [SerializeField] private Image myRarity;
     [SerializeField] private Image myBackground;
     [SerializeField] private Image myTextFieldBackground;
+    [SerializeField] private Image myTitleFieldBackground;
     [SerializeField] private TextMeshProUGUI myTitle;
     [SerializeField] private TextMeshProUGUI myDescription;
     [SerializeField] private Button myButton;
@@ -78,6 +79,7 @@ public class UpgradeOptionDisplay : MonoBehaviour
         myBackground.enabled = false;
         myRarity.enabled = false;
         myTextFieldBackground.enabled = false;
+        myTitleFieldBackground.enabled = false;
         myTitle.enabled = false;
         myDescription.enabled = false;
         myButton.enabled = false;
@@ -89,6 +91,7 @@ public class UpgradeOptionDisplay : MonoBehaviour
         myBackground.enabled = true;
         myRarity.enabled = true;
         myTextFieldBackground.enabled = true;
+        myTitleFieldBackground.enabled = true;
         myTitle.enabled = true;
         myDescription.enabled = true;
         myButton.enabled = true;

@@ -25,7 +25,7 @@ public class BaseEnemy : MonoBehaviour
     protected void Update()
     {
         material.SetFloat("_Fade", fadeLevel);
-        if (hitPoints <= 0)
+        if (hitPoints <= 10)
         {
             dead = true;
         }

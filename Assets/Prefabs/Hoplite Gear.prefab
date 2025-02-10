@@ -60,13 +60,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4479271021639872347}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.46097103, w: 0.88741523}
-  m_LocalPosition: {x: 0.457, y: -0.822, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.12, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.6283976, w: 0.7778924}
+  m_LocalPosition: {x: 0.594, y: -1.077, z: 0}
+  m_LocalScale: {x: 0.55, y: 0.12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2060882891159546382}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -54.9}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -77.864}
 --- !u!212 &5167278256647220426
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -190,7 +190,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6680512764796809933}
   - component: {fileID: 340177274370388628}
-  - component: {fileID: 2463368794799822184}
   m_Layer: 3
   m_Name: Tip
   m_TagString: Sword
@@ -267,43 +266,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &2463368794799822184
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7020607736873032125}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.06}
-  m_Size: {x: 0.7, y: 0.85}
-  m_Direction: 0
 --- !u!1 &7517660029651669966
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +277,7 @@ GameObject:
   - component: {fileID: 245352705302592150}
   - component: {fileID: 7447179050174407879}
   - component: {fileID: 9210864878592735363}
+  - component: {fileID: 513442572386036333}
   - component: {fileID: 5561440665675145066}
   - component: {fileID: 6208828356345302805}
   m_Layer: 3
@@ -409,11 +372,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 1
   bladePoint: {fileID: 8057839894899898071}
-  tipCollider: {fileID: 2463368794799822184}
+  tipCollider: {fileID: 513442572386036333}
   bladeCollider: {fileID: 5561440665675145066}
+  tipDamageModifier: 1.5
+  bladeDamageModifier: 0.1
+  speedDamageModifier: 0.6
   bladeDamage: 20
   tipDamage: 40
   animator: {fileID: 6208828356345302805}
+--- !u!70 &513442572386036333
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517660029651669966}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.541}
+  m_Size: {x: 1.4, y: 0.105}
+  m_Direction: 0
 --- !u!61 &5561440665675145066
 BoxCollider2D:
   m_ObjectHideFlags: 0

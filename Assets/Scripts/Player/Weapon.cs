@@ -13,6 +13,11 @@ public class Weapon : PlayerEquipment
     [SerializeField] protected GameObject bladePoint;
     [SerializeField] protected CapsuleCollider2D tipCollider;
     [SerializeField] protected BoxCollider2D bladeCollider;
+
+    [SerializeField] protected float tipDamageModifier = 1;
+    [SerializeField] protected float bladeDamageModifier = 1;
+    [SerializeField] protected float speedDamageModifier = 1;
+
     protected Vector3 previousPos;
     protected float bladeSpeed;
     [SerializeField] protected int bladeDamage;
@@ -34,17 +39,17 @@ public class Weapon : PlayerEquipment
 
     public float GetSpeed()
     {
-        return bladeSpeed;
+        return bladeSpeed * speedDamageModifier;
     }
 
     public int GetBladeDamage()
     {
-        return bladeDamage;
+        return (int)(bladeDamage * bladeDamageModifier);
     }
 
     public int GetTipDamage()
     {
-        return tipDamage;
+        return (int)(tipDamage * tipDamageModifier);
     }
 
 

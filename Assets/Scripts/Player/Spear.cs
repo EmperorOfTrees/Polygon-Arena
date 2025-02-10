@@ -5,8 +5,12 @@ using UnityEngine;
 public class Spear : Weapon
 {
     [SerializeField] private Animator animator;
+
     protected override void Awake()
     {
+        tipDamageModifier = 1.5f;
+        bladeDamageModifier = 0.1f;
+        speedDamageModifier = 0.6f;
 
     }
     protected override void Update()
@@ -14,22 +18,6 @@ public class Spear : Weapon
         base.Update();
 
     }
-
-    public new float GetSpeed()
-    {
-        return bladeSpeed;
-    }
-
-    public new int GetBladeDamage()
-    {
-        return (int)(bladeDamage*0.1f);
-    }
-
-    public new int GetTipDamage()
-    {
-        return (int)(tipDamage*1.5f);
-    }
-
 
     public Animator GetAnimator()
     {

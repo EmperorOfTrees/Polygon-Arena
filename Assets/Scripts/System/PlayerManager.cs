@@ -32,6 +32,7 @@ public enum MultiUps
 public class PlayerManager : Singleton<PlayerManager>
 {
     private PlayerStats playerStats;
+    private PlayerCharacterController playerCharacterController;
 
     private ExperienceBar xPBar;
     private readonly int startingEXP = 0;
@@ -195,6 +196,13 @@ public class PlayerManager : Singleton<PlayerManager>
         if (!oneTimeUpgrades[index])
         {
             oneTimeUpgrades[index] = true;
+            switch (index)
+            {
+                //This can be made smoother and should be, and values should be stored somewhere, it just does not feel right
+                case 0:
+                    playerCharacterController.SetJogger(true);
+                    break;
+            }
         }
         else
         {
@@ -266,6 +274,10 @@ public class PlayerManager : Singleton<PlayerManager>
     public void SetPlayerStatReference(PlayerStats pS)
     {
         playerStats = pS;
+    }
+    public void SetPlayerControlReference(PlayerCharacterController pCC)
+    {
+        playerCharacterController = pCC;
     }
 
     public void Upgrade(UpgradeType type, int index)

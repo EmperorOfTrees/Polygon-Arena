@@ -28,7 +28,7 @@ public class EquipmentController : MonoBehaviour
 
     [SerializeField] private List<Weapon> weaponSets = new();
 
-    private Weapon activeWeapon;
+    [SerializeField] private Weapon activeWeapon;
 
     [SerializeField] private CurrentWeapon currentWeapon = CurrentWeapon.Sword;
 
@@ -44,6 +44,7 @@ public class EquipmentController : MonoBehaviour
     {
         rotEquip = GetComponent<RotateEquipment>();
         playerStats = GetComponentInParent<PlayerStats>();
+        SetCurrentWeapon(CurrentWeapon.Sword);
     }
 
     void Update()
@@ -90,6 +91,19 @@ public class EquipmentController : MonoBehaviour
         {
             ShowHoplite();
 
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (playerStats.SU > 0)
+                {
+                    if (!isShieldTimedOut)
+                    {
+                        playerStats.AdjustShield(shieldDecayWeaponCost);
+                        
+                        activeWeapon.GetComponent<Animator>().SetBool("Thrust", true);
+                    }
+                }
+            }
+
             
             if (Input.GetMouseButton(1))
             {
@@ -97,25 +111,31 @@ public class EquipmentController : MonoBehaviour
                 {
                     if (!isShieldTimedOut)
                     {
+                        isShieldUp = true;
+
                         if(counter > 0.53f)
                         {
-                        playerStats.AdjustShield(shieldDecayWeaponCost);
+                            playerStats.AdjustShield(shieldDecayWeaponCost);
+                            counter = 0;
                         }
+
                         counter += Time.deltaTime;
                         activeWeapon.GetComponent<Animator>().SetBool("Thrust", true);
-
-                        isShieldUp = true;
                     }
                 }
                 else
                 {
                     ShieldTimeOut();
                     activeWeapon.GetComponent<Animator>().SetBool("Thrust", false);
+                    isShieldUp = false;
+                    counter = 0;
                 }
             }
             else
             {
                 activeWeapon.GetComponent<Animator>().SetBool("Thrust", false);
+                isShieldUp = false;
+                counter = 0;
             }
         }
     }

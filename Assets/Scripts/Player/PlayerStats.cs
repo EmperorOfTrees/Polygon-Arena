@@ -13,6 +13,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int currentMana;
     [SerializeField] private float currentShieldUp;
 
+
     [SerializeField] private int maxHP;
     [SerializeField] private float maxSTA;
     [SerializeField] private int maxMP;
@@ -20,6 +21,7 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private Weapon myWeapon;
     [SerializeField] private Shield myShield;
+
 
     public bool isShieldRecharging;
     public bool dead = false;
