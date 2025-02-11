@@ -102,15 +102,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 1392975754913817403}
+  shotTran: {fileID: 208688498358114576}
   IgnoreMe:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 768
   canFire: 1
   seesPlayer: 0
-  shotTran: {fileID: 208688498358114576}
   timeBetweenShots: 1.5
-  hitPoints: 0
   raylength: 10
+  hitPoints: 0
   shootSounds:
   - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
   - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}
@@ -248,15 +248,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 2386021139663267460}
+  shotTran: {fileID: 2421754539555239996}
   IgnoreMe:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 768
   canFire: 1
   seesPlayer: 0
-  shotTran: {fileID: 2421754539555239996}
   timeBetweenShots: 1.5
-  hitPoints: 0
   raylength: 10
+  hitPoints: 0
   shootSounds:
   - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
   - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}
@@ -394,15 +394,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 4901373425258316254}
+  shotTran: {fileID: 8069693012940069109}
   IgnoreMe:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 768
   canFire: 1
   seesPlayer: 0
-  shotTran: {fileID: 8069693012940069109}
   timeBetweenShots: 1.5
-  hitPoints: 0
   raylength: 10
+  hitPoints: 0
   shootSounds:
   - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
   - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}
@@ -509,15 +509,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6521279480380643041, guid: 4803526f560855844a4befd00f808792, type: 3}
   Pewer: {fileID: 4957107032841451172}
+  shotTran: {fileID: 3845940977389269589}
   IgnoreMe:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 768
   canFire: 1
   seesPlayer: 0
-  shotTran: {fileID: 3845940977389269589}
   timeBetweenShots: 1.5
-  hitPoints: 0
   raylength: 10
+  hitPoints: 0
   shootSounds:
   - {fileID: 8300000, guid: b51f5cec2d468e24ca59e83015698a26, type: 3}
   - {fileID: 8300000, guid: 2125b967382b6064c94f3e0a6dfad7ad, type: 3}

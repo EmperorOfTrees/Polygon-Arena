@@ -43,15 +43,17 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
 
     [SerializeField] private List<LocalUpgradeIdentifier> availableUpgrades = new List<LocalUpgradeIdentifier>();
 
-    //private Dictionary<UpgradeType, int> availableUpgrades = new Dictionary<UpgradeType, int>();
+    [SerializeField] private UpgradeType uType1;
+    [SerializeField] private UpgradeType uType2;
+    [SerializeField] private UpgradeType uType3;
 
-    private UpgradeType uType1;
-    private UpgradeType uType2;
-    private UpgradeType uType3;
+    [SerializeField] private int index1;
+    [SerializeField] private int index2;
+    [SerializeField] private int index3;
 
-    private int index1;
-    private int index2;
-    private int index3;
+    private void Start()
+    {
+    }
 
     void Update()
     {
@@ -63,15 +65,25 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
 
     public void GenerateOptions()
     {
+        print(availableUpgrades.Count);
+
+        availableUpgrades.Clear();
+        availableUpgrades.TrimExcess();
+
         FillDictionary();
         GenerateRandoms();
+
+        print(availableUpgrades.Count);
 
         option1.SetOption(uType1, index1);
         option2.SetOption(uType2, index2);
         option3.SetOption(uType3, index3);
 
-        availableUpgrades.Clear();
 
+        availableUpgrades.Clear();
+        availableUpgrades.TrimExcess();
+
+        print(availableUpgrades.Count);
     }
 
     public void FillDictionary()
@@ -156,13 +168,13 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
             else c = 0;
         }
 
-        index1 = availableUpgrades[0].currentIndex;
-        index2 = availableUpgrades[1].currentIndex;
-        index3 = availableUpgrades[2].currentIndex;
+        index1 = availableUpgrades[a].currentIndex;
+        index2 = availableUpgrades[b].currentIndex;
+        index3 = availableUpgrades[c].currentIndex;
 
-        uType1 = availableUpgrades[0].upgradeType;
-        uType2 = availableUpgrades[1].upgradeType;
-        uType3 = availableUpgrades[2].upgradeType;
+        uType1 = availableUpgrades[a].upgradeType;
+        uType2 = availableUpgrades[b].upgradeType;
+        uType3 = availableUpgrades[c].upgradeType;
 
     }
 

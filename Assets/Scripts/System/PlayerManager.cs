@@ -20,12 +20,12 @@ public enum ExclusiveUps
 public enum MultiUps
 {
     Health = 0,
-    Mana = 1,
-    Stamina = 2,
-    Shield = 3,
-    Damage = 4,
-    BladeDamage = 5,
-    TipDamage = 6,
+    Stamina = 1,
+    Shield = 2,
+    Damage = 3,
+    BladeDamage = 4,
+    TipDamage = 5,
+    //Mana = 6, make this entrance 6 eventually
     
 }
 
@@ -261,7 +261,7 @@ public class PlayerManager : Singleton<PlayerManager>
     private void UpdateStats()
     {
         playerCurrentMaxHealth = playerStartingMaxHealth + (multiTimeUpgrades[MultiUps.Health] * 100);
-        playerCurrentMaxMana = playerStartingMaxMana + (multiTimeUpgrades[MultiUps.Mana] * 10);
+        //playerCurrentMaxMana = playerStartingMaxMana + (multiTimeUpgrades[MultiUps.Mana] * 10); TODO: resinstate when Mana gets implemented
         playerCurrentMaxStamina = playerStartingMaxStamina + (multiTimeUpgrades[MultiUps.Stamina] * 10);
         playerCurrentMaxShield = playerStartingMaxShield + (multiTimeUpgrades[MultiUps.Shield] * 10);
         curBladeDamage = baseBladeDamage + (multiTimeUpgrades[MultiUps.Damage]) + (multiTimeUpgrades[MultiUps.BladeDamage] * 2);

@@ -7,8 +7,6 @@ public class ExperienceBar : MonoBehaviour
 
     [SerializeField] private Slider barSlider;
 
-    [SerializeField] private float lerpSpeed = 0.01f;
-
     [SerializeField] private float maxEXP;
     [SerializeField] private float currentEXP;
 

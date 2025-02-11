@@ -61,11 +61,6 @@ public class PlayerCharacterController : MonoBehaviour
         {
             GameManager.Pause();
         }
-        if (jogger)
-        {
-            joggerModCost = 0.5f;
-            joggerModSpeed = 1.2f;
-        }
 
         Dash();
     }
@@ -186,6 +181,16 @@ public class PlayerCharacterController : MonoBehaviour
     public void SetJogger(bool state)
     {
         jogger = state;
+        if (state)
+        {
+            joggerModCost = 0.5f;
+            joggerModSpeed = 1.2f;
+        }
+        if (!state)
+        {
+            joggerModCost = 1f;
+            joggerModSpeed = 1f;
+        }
     }
 
     

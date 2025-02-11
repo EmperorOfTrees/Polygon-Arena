@@ -43,7 +43,7 @@ public class BaseEnemy : MonoBehaviour
         {
             hitPoints -= damage;
             tookDamage = true;
-            timer = 1;
+            timer = 0.75f;
         }
     }
 
@@ -66,13 +66,15 @@ public class BaseEnemy : MonoBehaviour
             {
                 TakeDamage((int)collision.GetComponent<Weapon>().GetSpeed() * collision.GetComponent<Weapon>().GetTipDamage());
                 print("hit with the tip!");
+                SFXManager.Instance.PlayRandomSoundFXClip(swordSounds, collision.gameObject.transform, 0.30f);
             }
             else if (collision.GetType() == typeof(BoxCollider2D))
             {
                 TakeDamage((int)collision.GetComponent<Weapon>().GetSpeed() * collision.GetComponent<Weapon>().GetBladeDamage());
                 print("hit with the blade!");
+                SFXManager.Instance.PlayRandomSoundFXClip(swordSounds, collision.gameObject.transform, 0.20f);
             }
-            SFXManager.Instance.PlayRandomSoundFXClip(swordSounds, collision.gameObject.transform, 0.25f);
+            
         }
     }
 }

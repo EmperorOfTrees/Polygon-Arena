@@ -7,7 +7,7 @@ using System;
 
 public class UpgradeOptionDisplay : MonoBehaviour
 {
-    private UpgradeEntry myEntry;
+    [SerializeField] private UpgradeEntry myEntry;
 
     [SerializeField] private Image myIcon;
     [SerializeField] private Image myRarity;

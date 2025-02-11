@@ -32,7 +32,7 @@ public class Weapon : PlayerEquipment
     protected override void Update()
     {
         base.Update();
-        bladeSpeed = ((bladePoint.transform.position - previousPos).magnitude) / Time.deltaTime;
+        bladeSpeed = 0.05f + ((bladePoint.transform.position - previousPos).magnitude) / Time.deltaTime;
         previousPos = bladePoint.transform.position;
 
     }

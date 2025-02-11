@@ -56,7 +56,7 @@ MonoBehaviour:
   curBladeDamage: 0
   curTipDamage: 0
   playerStartingHealth: 1000
-  playerStartingMaxHealth: 100
+  playerStartingMaxHealth: 1000
   playerStartingMaxMana: 100
   playerStartingMaxStamina: 100
   playerStartingMaxShield: 5
