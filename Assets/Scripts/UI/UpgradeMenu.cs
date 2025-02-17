@@ -51,17 +51,7 @@ public class UpgradeMenu : StaticInstance<UpgradeMenu>
     [SerializeField] private int index2;
     [SerializeField] private int index3;
 
-    private void Start()
-    {
-    }
 
-    void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.X))
-        {
-            PlayerManager.Instance.LevelUpTest();
-        }
-    }
 
     public void GenerateOptions()
     {

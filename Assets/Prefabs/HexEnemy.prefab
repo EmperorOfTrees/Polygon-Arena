@@ -52,11 +52,12 @@ MonoBehaviour:
   behaviour: 2
   chaseToDistance: 6
   speed: 3
-  scoreValue: 40
   deathSounds:
   - {fileID: 8300000, guid: 7afe63cda5cb72e4581b3fc9c9e70963, type: 3}
   - {fileID: 8300000, guid: 8e627d7b6bed9254e947457ccc4f2f33, type: 3}
   - {fileID: 8300000, guid: 6857a5b86828379488c91a5c34b579ba, type: 3}
+  eXPValue: 45
+  scoreValue: 40
   distanceToOtherEnemy: 0
   tooClose: 0
 --- !u!58 &826378137514983801

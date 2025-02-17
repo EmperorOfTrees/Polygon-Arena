@@ -22,7 +22,7 @@ public class EnemyObject : MonoBehaviour
 
     [SerializeField] private AudioClip[] deathSounds;
 
-    [SerializeField] private int eXPValue = 5;
+    [SerializeField] private int eXPValue = 15;
     [SerializeField] private int scoreValue;
 
     private GameObject player;

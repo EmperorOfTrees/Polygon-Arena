@@ -59,7 +59,10 @@ public class PlayerCharacterController : MonoBehaviour
         motionVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if (GameManager.Instance.CurrentState == Game_State.Playing)
+            {
             GameManager.Pause();
+            }
         }
 
         Dash();

@@ -34,11 +34,11 @@ public class PlayerManager : Singleton<PlayerManager>
     private PlayerStats playerStats;
     private PlayerCharacterController playerCharacterController;
 
-    private ExperienceBar xPBar;
     private readonly int startingEXP = 0;
     private int currentEXP;
     private int playerLevel;
 
+    private ExperienceBar xPBar;
     private PlayerStatBar playerHealthBar;
     private PlayerStatBar playerStaminaBar;
     private PlayerStatBar playerShieldBar;
